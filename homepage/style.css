@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.header-container {
+    width: 100%;
+    padding: 15px 80px;
+    background: white;
+    border-bottom: 1px solid #ebebeb;
+}
+
+/* Navbar tầng trên */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    color: #717171;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-item.active {
+    color: #000;
+}
+
+.nav-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    width: 100%;
+    height: 2px;
+    background: black;
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: -25px;
+    background: #484848;
+    color: white;
+    font-size: 8px;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* User Controls bên phải */
+.user-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.host-text {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.profile-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ddd;
+    padding: 5px 5px 5px 12px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.user-avatar {
+    background: #717171;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Thanh Search Bar tầng dưới */
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.main-search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    width: 800px;
+}
+
+.search-input-group {
+    flex: 1;
+    padding: 10px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-input-group label {
+    font-size: 12px;
+    font-weight: 800;
+    color: #000;
+}
+
+.search-input-group input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #717171;
+    margin-top: 2px;
+}
+
+.divider {
+    width: 1px;
+    height: 32px;
+    background-color: #ddd;
+}
+
+.search-button {
+    background: #ff385c;
+    color: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.search-button:hover {
+    background: #e31c5f;
+}
+
+:root {
+    --black: #222222;
+    --grey: #717171;
+    --border: #dddddd;
+}
+
+.container {
+    padding: 30px 80px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Tiêu đề & Nút bấm điều hướng */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.arrow-icon {
+    font-size: 26px;
+    vertical-align: middle;
+}
+
+.nav-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 8px;
+    transition: 0.2s;
+}
+
+.nav-btn:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Lưới hiển thị */
+.listing-grid {
+    display: grid;
+    /* Chia 6 cột đều nhau giống như trong ảnh của bạn */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+}
+
+/* Thẻ phòng */
+.room-card {
+    width: 100%;
+}
+
+.image-wrapper {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    /* Tạo hình vuông */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.room-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Huy hiệu Guest Favorite */
+.badge-guest {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--black);
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Nút Trái tim (Wishlist) */
+.wishlist-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Chữ bên dưới */
+.room-details {
+    margin-top: 12px;
+}
+
+.row-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--black);
+}
+
+.rating {
+    font-size: 14px;
+    color: var(--black);
+}
+
+.price {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--grey);
+}
+
+.price b {
+    color: var(--black);
+}
+
+/* Responsive cơ bản cho màn hình nhỏ */
+@media (max-width: 1200px) {
+    .listing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .listing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
