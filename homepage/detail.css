@@ -49,19 +49,24 @@
     font-weight: 600;
 }
 
-/* Layout 2 cột */
 .main-content {
     display: flex;
-    margin-top: 48px;
+    justify-content: space-between;
     gap: 80px;
+    margin-top: 32px;
+    position: relative;
 }
 
 .info-column {
-    flex: 2;
+    flex: 1;
+    max-width: 650px;
 }
 
 .booking-sidebar {
-    flex: 1;
+    width: 370px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
 }
 
 /* Thẻ Booking nổi tiếng của Airbnb */
@@ -113,18 +118,6 @@
     cursor: pointer;
 }
 
-/* Favorite Badge */
-.favorite-badge-big {
-    display: flex;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 24px;
-    margin: 32px 0;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-}
-
 .badge-left {
     font-weight: bold;
     font-size: 18px;
@@ -141,4 +134,219 @@
 
 .badge-right {
     flex: 1;
+}
+
+.highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Khoảng cách giữa các mục */
+    margin: 32px 0;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: flex-start;
+    /* Icon luôn nằm trên cùng của văn bản */
+    gap: 16px;
+    /* Khoảng cách giữa icon và chữ */
+}
+
+.highlight-icon {
+    margin-top: 4px;
+    /* Căn chỉnh icon cho khớp với dòng tiêu đề đầu tiên */
+    color: #222222;
+}
+
+.highlight-text .title {
+    font-size: 16px;
+    font-weight: 600;
+    /* Đậm vừa phải theo phong cách Airbnb */
+    color: #222222;
+    margin-bottom: 4px;
+}
+
+.highlight-text .desc {
+    font-size: 14px;
+    color: #717171;
+    /* Màu xám đặc trưng của chú thích */
+    line-height: 20px;
+}
+
+/* Mô tả rút gọn */
+.description-section {
+    padding: 32px 0;
+    line-height: 24px;
+    color: #222;
+}
+
+.auto-translate {
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.show-more-btn {
+    margin-top: 16px;
+    padding: 13px 23px;
+    border-radius: 8px;
+    border: 1px solid #222;
+    background: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.show-more-btn:hover {
+    background: #f7f7f7;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    /* Ẩn mặc định */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 780px;
+    max-height: 90vh;
+    border-radius: 12px;
+    position: relative;
+    padding: 40px;
+    overflow-y: auto;
+    /* Cho phép cuộn nếu nội dung dài */
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal-body h2 {
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+.modal-body h3 {
+    font-size: 18px;
+    margin: 24px 0 12px 0;
+}
+
+/* Đường kẻ chia cách các phần */
+.section-divider {
+    border: 0;
+    border-top: 1px solid #dddddd;
+    margin: 48px 0;
+}
+
+.amenities-section {
+    padding-bottom: 48px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 24px;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Chia làm 2 cột bằng nhau */
+    gap: 16px 40px;
+    /* Khoảng cách dọc 16px, ngang 40px */
+}
+
+.amenity-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0;
+}
+
+.amenity-item svg {
+    width: 24px;
+    height: 24px;
+    fill: #222222;
+    flex-shrink: 0;
+    /* Không cho icon bị bóp méo */
+}
+
+.amenity-item span {
+    font-size: 16px;
+    color: #222222;
+    line-height: 20px;
+}
+
+/* Nút hiển thị tất cả */
+.show-all-amenities {
+    margin-top: 32px;
+    padding: 13px 23px;
+    background-color: white;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.show-all-amenities:hover {
+    background-color: #f7f7f7;
+}
+
+/* Tùy chỉnh riêng cho Modal Tiện nghi */
+.amenities-modal-content {
+    max-width: 780px;
+    height: 90vh;
+    /* Chiều cao cố định 90% màn hình */
+    padding: 24px 48px 48px 48px;
+}
+
+.modal-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    top: 0;
+    background: white;
+    padding-top: 10px;
+}
+
+.amenity-group {
+    border-bottom: 1px solid #ebebeb;
+    padding: 32px 0;
+}
+
+.amenity-group:last-child {
+    border-bottom: none;
+}
+
+.amenity-group h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.amenity-list-item {
+    font-size: 16px;
+    color: #222;
+    padding: 12px 0;
 }

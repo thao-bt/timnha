@@ -3,135 +3,462 @@
     <link rel="stylesheet" href="detail.css">
 </head>
 
+<body>
 
-
-<header class="header-container">
-    <div class="navbar">
-        <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg" alt="Airbnb Logo"
-                width="102">
-        </div>
-
-        <div class="nav-links">
-            <div class="nav-item active">
-                <img src="https://cdn-icons-png.flaticon.com/512/619/619153.png" width="20"> <span>Nơi lưu
-                    trú</span>
+    <header class="header-container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg" alt="Airbnb Logo"
+                    width="102">
             </div>
-            <div class="nav-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/2910/2910311.png" width="20"> <span>Trải
-                    nghiệm</span>
-                <span class="badge">MỚI</span>
-            </div>
-            <div class="nav-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/3050/3050222.png" width="20"> <span>Dịch vụ</span>
-                <span class="badge">MỚI</span>
-            </div>
-        </div>
 
-        <div class="user-controls">
-            <span class="host-text">Trở thành host</span>
-            <div class="icon-globe">🌐</div>
-            <div class="profile-menu">
-                <span>☰</span>
-                <div class="user-avatar">👤</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="search-section">
-        <div class="main-search-bar">
-            <div class="search-input-group">
-                <label>Địa điểm</label>
-                <input type="text" placeholder="Tìm kiếm điểm đến">
-            </div>
-            <div class="divider"></div>
-            <div class="search-input-group">
-                <label>Thời gian</label>
-                <input type="text" placeholder="Thêm ngày">
-            </div>
-            <div class="divider"></div>
-            <div class="search-input-group">
-                <label>Khách</label>
-                <input type="text" placeholder="Thêm khách">
-            </div>
-            <button class="search-button">
-                <span class="search-icon">🔍</span>
-            </button>
-        </div>
-    </div>
-</header>
-
-<main class="detail-container">
-    <section class="title-section">
-        <h1>Căn hộ view vườn - 05 phút tới sân bay TSN</h1>
-        <div class="action-buttons">
-            <span><u>Chia sẻ</u></span>
-            <span><u>Lưu</u></span>
-        </div>
-    </section>
-
-    <section class="photo-grid">
-        <div class="big-photo">
-            <img
-                src="https://a0.muscache.com/im/pictures/miso/Hosting-53274539/original/3652a70e-8ab4-4688-952c-43fe53ba9544.jpeg">
-        </div>
-        <div class="small-photos">
-            <img
-                src="https://a0.muscache.com/im/pictures/miso/Hosting-53274539/original/6c858e80-77a2-4a00-a541-026027a29959.jpeg">
-            <img
-                src="https://a0.muscache.com/im/pictures/miso/Hosting-53274539/original/8161f38e-80c7-4340-9759-3232815779c1.jpeg">
-            <img
-                src="https://a0.muscache.com/im/pictures/miso/Hosting-53274539/original/8643924a-7119-4824-a477-9694f31c26f0.jpeg">
-            <img
-                src="https://a0.muscache.com/im/pictures/miso/Hosting-53274539/original/463a568c-4f7d-450f-90e6-990a4261775e.jpeg">
-            <button class="show-all-btn">Hiển thị tất cả ảnh</button>
-        </div>
-    </section>
-
-    <section class="main-content">
-        <div class="info-column">
-            <h2>Toàn bộ căn hộ cho thuê tại Quận Tân Bình, Việt Nam</h2>
-            <p class="subtitle">2 khách · 1 phòng ngủ · 1 giường · 1 phòng tắm</p>
-
-            <div class="favorite-badge-big">
-                <div class="badge-left">Được khách yêu thích</div>
-                <div class="badge-middle">Khách đánh giá đây là một trong những ngôi nhà được yêu thích nhất</div>
-                <div class="badge-right">
-                    <strong>4,85</strong>
-                    <p>143 đánh giá</p>
+            <div class="nav-links">
+                <div class="nav-item active">
+                    <img src="https://cdn-icons-png.flaticon.com/512/619/619153.png" width="20"> <span>Nơi lưu
+                        trú</span>
+                </div>
+                <div class="nav-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2910/2910311.png" width="20"> <span>Trải
+                        nghiệm</span>
+                    <span class="badge">MỚI</span>
+                </div>
+                <div class="nav-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3050/3050222.png" width="20"> <span>Dịch vụ</span>
+                    <span class="badge">MỚI</span>
                 </div>
             </div>
 
-            <hr>
-            <div class="host-info">
-                <div class="host-avatar">👤</div>
-                <div>
-                    <p><b>Host: Thy Thy</b></p>
-                    <p class="grey-text">Superhost · 2 năm kinh nghiệm</p>
+            <div class="user-controls">
+                <span class="host-text">Trở thành host</span>
+                <div class="icon-globe">🌐</div>
+                <div class="profile-menu-container">
+                    <div class="profile-menu" id="profileMenuBtn">
+                        <span>☰</span>
+                    </div>
+
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <div class="menu-item">
+                            <span class="menu-icon">❓</span>
+                            <span>Trung tâm trợ giúp</span>
+                        </div>
+                        <hr>
+                        <div class="menu-item host-promo">
+                            <div>
+                                <b>Trở thành host</b>
+                                <p>Bắt đầu làm host và kiếm thêm thu nhập thật dễ dàng.</p>
+                            </div>
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111236.png" width="40">
+                        </div>
+                        <hr>
+                        <div class="menu-item">Giới thiệu host</div>
+                        <div class="menu-item">Tìm host hỗ trợ</div>
+                        <hr>
+                        <div class="menu-item"><b>Đăng nhập hoặc đăng ký</b></div>
+                    </div>
                 </div>
             </div>
-            <hr>
-            <ul class="highlights">
-                <li>🏠 <b>Tự nhận phòng</b>
-                    <p>Tự nhận phòng bằng khóa thông minh.</p>
-                </li>
-                <li>👨‍👩‍👧 <b>Điểm xếp hạng tuyệt đối từ gia đình</b>
-                    <p>100% các gia đình đánh giá 5 sao.</p>
-                </li>
-            </ul>
         </div>
 
-        <div class="booking-sidebar">
-            <div class="booking-card">
-                <div class="date-picker">
-                    <div class="date-box">NHẬN PHÒNG <br> <b>8/4/2026</b></div>
-                    <div class="date-box">TRẢ PHÒNG <br> <b>9/4/2026</b></div>
+        <div class="search-section">
+            <div class="main-search-bar">
+                <div class="search-input-group">
+                    <label>Địa điểm</label>
+                    <input type="text" placeholder="Tìm kiếm điểm đến">
                 </div>
-                <div class="guest-picker">KHÁCH <br> 2 khách, 1 em bé</div>
-                <p class="error-msg">⚠️ Những ngày này không còn phòng</p>
-                <button class="btn-primary">Thay đổi ngày</button>
+                <div class="divider"></div>
+                <div class="search-input-group">
+                    <label>Thời gian</label>
+                    <input type="text" placeholder="Thêm ngày">
+                </div>
+                <div class="divider"></div>
+                <div class="search-input-group">
+                    <label>Khách</label>
+                    <input type="text" placeholder="Thêm khách">
+                </div>
+                <button class="search-button">
+                    <span class="search-icon">🔍</span>
+                </button>
             </div>
-            <p class="report-text">🏳️ <u>Báo cáo nhà/phòng cho thuê này</u></p>
         </div>
-    </section>
-</main>
+    </header>
+
+    <main class="detail-container">
+        <section class="title-section">
+            <h1>Căn hộ view vườn - 05 phút tới sân bay TSN</h1>
+            <div class="action-buttons">
+                <span><u>Chia sẻ</u></span>
+                <span><u>Lưu</u></span>
+            </div>
+        </section>
+
+        <section class="photo-grid">
+            <div class="big-photo">
+                <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-53274539/original/3652a70e-8ab4-4688-952c-43fe53ba9544.jpeg">
+            </div>
+            <div class="small-photos">
+                <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-53274539/original/6c858e80-77a2-4a00-a541-026027a29959.jpeg">
+                <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-53274539/original/8161f38e-80c7-4340-9759-3232815779c1.jpeg">
+                <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-53274539/original/8643924a-7119-4824-a477-9694f31c26f0.jpeg">
+                <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-53274539/original/463a568c-4f7d-450f-90e6-990a4261775e.jpeg">
+
+                <button class="show-all-btn">Hiển thị tất cả ảnh</button>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="info-column">
+                <h2>Toàn bộ căn hộ cho thuê tại Quận Tân Bình, Việt Nam</h2>
+                <p class="subtitle">2 khách · 1 phòng ngủ · 1 giường · 1 phòng tắm</p>
+
+                <hr>
+                <div class="host-info">
+                    <div class="host-avatar">👤</div>
+                    <div>
+                        <p><b>Host: Thy Thy</b></p>
+                        <p class="grey-text">Superhost · 2 năm kinh nghiệm</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+                                style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+                                <path d="m26 24v4h-20v-4z m-8-22v18h5l-7 7-7-7h5v-18z"></path>
+                            </svg>
+                        </div>
+                        <div class="highlight-text">
+                            <p class="title">Tự nhận phòng</p>
+                            <p class="desc">Tự nhận phòng bằng cách nhập mã số vào cửa.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+                                style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+                                <path
+                                    d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zm0 14c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="highlight-text">
+                            <p class="title">Khu vực có thể đi bộ</p>
+                            <p class="desc">Khách cho biết khu vực này rất dễ đi lại.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+                                style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+                                <path
+                                    d="M26 4a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h20zm0 2H6v20h20V6zM14 12v2H8v-2h6zm10 0v2h-8v-2h8zM14 16v2H8v-2h6zm10 0v2h-8v-2h8z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="highlight-text">
+                            <p class="title">Phòng trong căn hộ cho thuê</p>
+                            <p class="desc">Bạn sẽ có phòng riêng trong một ngôi nhà và được sử dụng những khu vực
+                                chung.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <section class="description-section">
+
+                    <div class="description-content">
+                        Chào mừng bạn đến với căn hộ nhỏ xinh và ấm cúng của tôi, nằm ngay trung tâm của Quận 1. Được
+                        thiết
+                        kế
+                        hoàn hảo cho những ai tìm kiếm sự thoải mái và tiện nghi, không gian này mang đến một nơi nghỉ
+                        ngơi
+                        yên
+                        bình chỉ cách các điểm tham quan nổi tiếng của thành phố vài bước chân.
+                        <br><br>
+                        Căn hộ có bếp đầy đủ dụng cụ, giường ngủ êm ái và không gian yên tĩnh để bạn nghỉ ngơi sau một
+                        ngày
+                        khám
+                        phá thành phố. ✨
+                        <p>...</p>
+                    </div>
+
+                    <button class="show-more-btn" id="openDescription">Hiển thị thêm</button>
+                </section>
+                <div class="modal-overlay" id="descriptionModal">
+                    <div class="modal-content">
+                        <button class="close-modal" id="closeDescription">&times;</button>
+                        <div class="modal-body">
+                            <h2>Giới thiệu về chỗ ở này</h2>
+                            <br>
+                            <p>Chào mừng bạn đến với căn hộ nhỏ xinh và ấm cúng của tôi, nằm ngay trung tâm của Quận 1.
+                                Được
+                                thiết kế hoàn hảo cho những ai tìm kiếm sự thoải mái và tiện nghi, không gian này mang
+                                đến
+                                một
+                                nơi nghỉ ngơi yên bình chỉ cách các điểm tham quan nổi tiếng của thành phố vài bước
+                                chân.
+                            </p>
+                            <br>
+                            <p>Căn hộ có bếp đầy đủ dụng cụ, giường ngủ êm ái và không gian yên tĩnh để bạn nghỉ ngơi
+                                sau
+                                một
+                                ngày khám phá thành phố. ✨</p>
+                            <br>
+                            <h3>Chỗ ở</h3>
+                            <p>Căn hộ được trang bị đầy đủ nội thất, mang đến cho bạn mọi tiện nghi cần thiết cho một kỳ
+                                nghỉ
+                                thoải mái và thuận tiện. Thưởng thức những buổi xem phim thú vị với máy chiếu và đắm
+                                chìm
+                                trong
+                                âm thanh sống động từ hệ thống loa chất lượng cao. Ngoài ra, bạn còn có một góc làm việc
+                                nhỏ
+                                –
+                                lý tưởng để hoàn thành công việc trong thời gian lưu trú.</p>
+                            <br>
+                            <p>Phòng tắm sạch sẽ, hiện đại sẽ mang đến cho bạn cảm giác sảng khoái mỗi ngày. Với vị trí
+                                đắc
+                                địa,
+                                bạn có thể dễ dàng tiếp cận các điểm tham quan, nhà hàng và nhiều tiện ích khác xung
+                                quanh.
+                                Hãy
+                                để nơi đây trở thành ngôi nhà thứ hai của bạn! 👀 🤩</p>
+                            <br>
+                            <h3>Trong thời gian ở</h3>
+                            <p>Bạn có thể dễ dàng liên hệ với tôi trong suốt thời gian lưu trú. Đừng ngần ngại gọi điện,
+                                nhắn
+                                tin qua iMessage, Viber hoặc Zalo nếu bạn có bất kỳ câu hỏi, yêu cầu hay cần hỗ trợ gì.
+                                Tôi
+                                luôn
+                                sẵn sàng để giúp bạn có một kỳ nghỉ thoải mái và suôn sẻ, nên cứ thoải mái liên hệ với
+                                tôi
+                                nhé!
+                                🖐️</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <section class="amenities-section">
+                    <h2 class="section-title">Nơi này có những gì cho bạn</h2>
+
+                    <div class="amenities-grid">
+                        <div class="amenity-item">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                role="presentation" focusable="false">
+                                <path
+                                    d="M19 1a3 3 0 0 1 3 3v24a3 3 0 0 1-3 3H13a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3h6zm-1 2h-4a1 1 0 0 0-1 1v24a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-2 19a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+                                </path>
+                            </svg>
+                            <span>Khóa ở cửa phòng ngủ</span>
+                        </div>
+
+                        <div class="amenity-item">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                role="presentation" focusable="false">
+                                <path
+                                    d="M24 5a5 5 0 0 1 5 5v12a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V10a5 5 0 0 1 5-5h16zm0 2H8a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V10a3 3 0 0 0-3-3zM9 11a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+                                </path>
+                            </svg>
+                            <span>Wi-fi</span>
+                        </div>
+
+                        <div class="amenity-item">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                role="presentation" focusable="false">
+                                <path d="M26 4a2 2 0 0 1 2 2v20h2v2H2v-2h2V6a2 2 0 0 1 2-2h20zm-2 2H8v20h16V6z"></path>
+                            </svg>
+                            <span>Không gian riêng để làm việc</span>
+                        </div>
+
+                        <div class="amenity-item">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                role="presentation" focusable="false">
+                                <path
+                                    d="M28 5v18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm-2 2H6v16h20zm-6 19a1 1 0 1 1 0 2H12a1 1 0 1 1 0-2z">
+                                </path>
+                            </svg>
+                            <span>TV với Netflix</span>
+                        </div>
+
+                        <div class="amenity-item">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                role="presentation" focusable="false">
+                                <path
+                                    d="M16 1a15 15 0 1 1 0 30 15 15 0 0 1 0-30zm0 2a13 13 0 1 0 0 26 13 13 0 0 0 0-26zm0 4a9 9 0 1 1 0 18 9 9 0 0 1 0-18zm0 2a7 7 0 1 0 0 14 7 7 0 0 0 0-14z">
+                                </path>
+                            </svg>
+                            <span>Máy giặt</span>
+                        </div>
+
+                        <div class="amenity-item">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                role="presentation" focusable="false">
+                                <path
+                                    d="M16 1a15 15 0 1 1 0 30 15 15 0 0 1 0-30zm0 2a13 13 0 1 0 0 26 13 13 0 0 0 0-26zM9 13a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm4-4a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+                                </path>
+                            </svg>
+                            <span>Máy sấy phí Miễn phí – Trong toà nhà</span>
+                        </div>
+
+                        <div class="amenity-item">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                role="presentation" focusable="false">
+                                <path
+                                    d="M16 2a1 1 0 0 1 1 1v4.06l3.54-2.04 1 1.73L18 8.73l3.54 2.04-1 1.73L17 10.46V15h4.54l-2.04 3.54 1.73 1L23.27 16l2.04 3.54 1.73-1L25 15h4.06a1 1 0 0 1 0 2h-4.06l2.04 3.54-1.73 1-3.54-2.04v4.06a1 1 0 0 1-2 0v-4.06l-3.54 2.04-1-1.73L14 19.27l-3.54 2.04-1-1.73L13 17.54V13h-4.54l2.04-3.54-1.73-1L6.73 12 4.69 8.46l-1.73 1L5 13H0.94a1 1 0 1 1 0-2h4.06L2.96 7.46l1.73-1 3.54 2.04V4.44a1 1 0 1 1 2 0v4.06l3.54-2.04 1 1.73L12.73 10l3.54-2.04 1-1.73z">
+                                </path>
+                            </svg>
+                            <span>Điều hòa nhiệt độ</span>
+                        </div>
+
+                        <div class="amenity-item">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                role="presentation" focusable="false">
+                                <path d="M26 2v28H6V2h20zm-2 2H8v24h16V4zM15 7v2H11V7h4zm6 0v2h-4V7h4z"></path>
+                            </svg>
+                            <span>Sân hiên chung hoặc ban công chung</span>
+                        </div>
+                    </div>
+
+                    <button class="show-all-amenities">Hiển thị tất cả 34 tiện nghi</button>
+                </section>
+                <div class="modal-overlay" id="amenitiesModal">
+                    <div class="modal-content amenities-modal-content">
+                        <button class="close-modal" id="closeAmenities">&times;</button>
+                        <div class="modal-body">
+                            <h2 class="modal-title">Nơi này có những gì cho bạn</h2>
+
+
+                            <div class="amenity-group">
+                                <h3>Phòng tắm</h3>
+                                <div class="amenity-list-item">Máy sấy tóc</div>
+                                <div class="amenity-list-item">Sản phẩm làm sạch</div>
+                                <div class="amenity-list-item">Nước nóng</div>
+                                <div class="amenity-list-item">Sữa tắm</div>
+                            </div>
+
+                            <div class="amenity-group">
+                                <h3>Phòng ngủ và giặt ủi</h3>
+                                <div class="amenity-list-item">Máy giặt – Trong tòa nhà</div>
+                                <div class="amenity-list-item">Máy sấy – Trong tòa nhà</div>
+                                <div class="amenity-list-item">Các tiện nghi thiết yếu (Khăn tắm, ga trải giường...)
+                                </div>
+                                <div class="amenity-list-item">Móc treo quần áo</div>
+                                <div class="amenity-list-item">Ga trải giường</div>
+                                <div class="amenity-list-item">Gối bổ sung và chăn đắp</div>
+                                <div class="amenity-list-item">Rèm che tối cửa sổ</div>
+                                <div class="amenity-list-item">Bàn ủi</div>
+                                <div class="amenity-list-item">Tủ quần áo</div>
+                            </div>
+
+                            <div class="amenity-group">
+                                <h3>Giải trí</h3>
+                                <div class="amenity-list-item">TV với Netflix, kết nối cáp</div>
+                            </div>
+
+                            <div class="amenity-group">
+                                <h3>Gia đình</h3>
+                                <div class="amenity-list-item">Nôi - có sẵn theo yêu cầu</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="booking-sidebar">
+                <div class="booking-card">
+                    <div class="date-picker">
+                        <div class="date-box">NHẬN PHÒNG <br> <b>8/4/2026</b></div>
+                        <div class="date-box">TRẢ PHÒNG <br> <b>9/4/2026</b></div>
+                    </div>
+                    <div class="guest-picker">KHÁCH <br> 2 khách, 1 em bé</div>
+                    <p class="error-msg">⚠️ Những ngày này không còn phòng</p>
+                    <button class="btn-primary">Thay đổi ngày</button>
+                </div>
+                <p class="report-text">🏳️ <u>Báo cáo nhà/phòng cho thuê này</u></p>
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <footer class="footer-container">
+        <div class="footer-sections">
+            <div class="footer-column">
+                <h3>Hỗ trợ</h3>
+                <ul>
+                    <li><a href="#">Trung tâm trợ giúp</a></li>
+                    <li><a href="#">Yêu cầu trợ giúp về vấn đề an toàn</a></li>
+                    <li><a href="#">AirCover</a></li>
+                    <li><a href="#">Chống phân biệt đối xử</a></li>
+                    <li><a href="#">Hỗ trợ người khuyết tật</a></li>
+                    <li><a href="#">Các tùy chọn hủy</a></li>
+                    <li><a href="#">Báo cáo lo ngại của khu dân cư</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Đón tiếp khách</h3>
+                <ul>
+                    <li><a href="#">Cho thuê nhà trên Airbnb</a></li>
+                    <li><a href="#">Đưa trải nghiệm của bạn lên Airbnb</a></li>
+                    <li><a href="#">Đưa dịch vụ của bạn lên Airbnb</a></li>
+                    <li><a href="#">AirCover cho host</a></li>
+                    <li><a href="#">Tài nguyên về đón tiếp khách</a></li>
+                    <li><a href="#">Diễn đàn cộng đồng</a></li>
+                    <li><a href="#">Đón tiếp khách có trách nhiệm</a></li>
+                    <li><a href="#">Tham gia khóa học miễn phí về công việc của host</a></li>
+                    <li><a href="#">Tìm host hỗ trợ</a></li>
+                    <li><a href="#">Giới thiệu chủ nhà</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Airbnb</h3>
+                <ul>
+                    <li><a href="#">Bản phát hành Mùa hè 2025</a></li>
+                    <li><a href="#">Trang tin tức</a></li>
+                    <li><a href="#">Cơ hội nghề nghiệp</a></li>
+                    <li><a href="#">Nhà đầu tư</a></li>
+                    <li><a href="#">Chỗ ở khẩn cấp Airbnb.org</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <span>© 2026 Airbnb, Inc.</span>
+                <span class="dot">·</span>
+                <a href="#">Quyền riêng tư</a>
+                <span class="dot">·</span>
+                <a href="#">Điều khoản</a>
+            </div>
+            <div class="footer-bottom-right">
+                <div class="settings">
+                    <span class="icon">🌐</span>
+                    <a href="#"><b>Tiếng Việt (VN)</b></a>
+                    <a href="#"><b>₫ VND</b></a>
+                </div>
+                <div class="social-icons">
+                    <a href="#">fb</a>
+                    <a href="#">tw</a>
+                    <a href="#">ig</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
