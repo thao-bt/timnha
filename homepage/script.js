@@ -1,72 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. XỬ LÝ MENU DROPDOWN (Profile)
     const menuBtn = document.getElementById('profileMenuBtn');
     const dropdown = document.getElementById('dropdownMenu');
 
     if (menuBtn && dropdown) {
-        // 1. Khi nhấn vào nút profile, bật/tắt menu
         menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Ngăn sự kiện lan ra ngoài để không bị đóng ngay lập tức
+            e.stopPropagation();
             dropdown.classList.toggle('show');
         });
 
-        // 2. Khi nhấn bất kỳ đâu ngoài menu, menu sẽ tự đóng
         document.addEventListener('click', (e) => {
-            // Nếu click không nằm trong dropdown và cũng không nằm trên nút menu
             if (!dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
                 dropdown.classList.remove('show');
             }
         });
     }
-});
 
-// Lấy các phần tử
-const openBtn = document.getElementById('openDescription');
-const closeBtn = document.getElementById('closeDescription');
-const modal = document.getElementById('descriptionModal');
+    // 2. XỬ LÝ HIỂN THỊ ĐĂNG NHẬP / ĐĂNG XUẤT
+    const authBtnContainer = document.getElementById('auth-btn-container');
+    const savedUser = localStorage.getItem('currentUser');
 
-// Mở modal
-openBtn.addEventListener('click', () => {
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // Ngăn cuộn trang web khi đang mở modal
-});
+    if (savedUser && authBtnContainer) {
+        const user = JSON.parse(savedUser);
 
-// Đóng modal
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Cho phép cuộn lại
-});
+        // Thay đổi giao diện bên trong Menu Dropdown
+        authBtnContainer.innerHTML = `
+            <div style="padding: 8px 15px; border-bottom: 1px solid #eee; margin-bottom: 5px;">
+                <b style="color: #ff385c; display: block;">Chào, ${user.name}</b>
+            </div>
+            <div id="logout-btn" class="menu-item" style="cursor: pointer; padding: 10px 15px; color: #222;">
+                Đăng xuất
+            </div>
+        `;
 
-// Đóng khi nhấn ra ngoài vùng trắng
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        // Gán sự kiện cho nút đăng xuất mới tạo
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            alert("Bạn đã đăng xuất thành công!");
+            window.location.reload();
+        });
     }
-});
 
-// Thêm vào sau đoạn code xử lý Modal Mô tả
-const openAmenitiesBtn = document.querySelector('.show-all-amenities');
-const closeAmenitiesBtn = document.getElementById('closeAmenities');
-const amenitiesModal = document.getElementById('amenitiesModal');
+    // 3. XỬ LÝ MODAL MÔ TẢ & TIỆN NGHI
+    const openBtn = document.getElementById('openDescription');
+    const closeBtn = document.getElementById('closeDescription');
+    const modal = document.getElementById('descriptionModal');
 
-if (openAmenitiesBtn && amenitiesModal) {
-    // Mở modal tiện nghi
-    openAmenitiesBtn.addEventListener('click', () => {
-        amenitiesModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Khóa cuộn trang chính
-    });
+    if (openBtn && modal) {
+        openBtn.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
 
-    // Đóng modal tiện nghi
-    closeAmenitiesBtn.addEventListener('click', () => {
-        amenitiesModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
+    const openAmenitiesBtn = document.querySelector('.show-all-amenities');
+    const closeAmenitiesBtn = document.getElementById('closeAmenities');
+    const amenitiesModal = document.getElementById('amenitiesModal');
 
-    // Đóng khi nhấn ra ngoài vùng Modal
-    window.addEventListener('click', (e) => {
-        if (e.target === amenitiesModal) {
+    if (openAmenitiesBtn && amenitiesModal) {
+        openAmenitiesBtn.addEventListener('click', () => {
+            amenitiesModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+        closeAmenitiesBtn.addEventListener('click', () => {
             amenitiesModal.style.display = 'none';
             document.body.style.overflow = 'auto';
-        }
-    });
-}
+        });
+    }
+});

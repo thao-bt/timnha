@@ -21,17 +21,17 @@
 
             <form id="auth-form">
                 <div class="input-group signup-only" style="display: none;">
-                    <input type="text" placeholder="Họ và tên">
+                    <input type="text" id="auth-name" placeholder="Họ và tên">
                 </div>
                 <div class="input-group signup-only" style="display: none;">
-                    <input type="tel" placeholder="Số điện thoại">
+                    <input type="tel" id="auth-phone" placeholder="Số điện thoại">
                 </div>
 
                 <div class="input-group">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" id="auth-email" placeholder="Email" required>
                 </div>
                 <div class="input-group">
-                    <input type="password" placeholder="Mật khẩu" required>
+                    <input type="password" id="auth-password" placeholder="Mật khẩu" required>
                 </div>
 
                 <button type="submit" class="btn-primary" id="submit-btn">Tiếp tục</button>
@@ -62,10 +62,9 @@
     <script>
         let isLogin = true;
 
+        // 1. Hàm chuyển đổi giao diện (Giữ nguyên logic của bạn nhưng tối ưu hơn)
         function toggleAuth() {
             isLogin = !isLogin;
-
-            // Lấy các phần tử cần thay đổi
             const title = document.getElementById('form-title');
             const subtitle = document.getElementById('form-subtitle');
             const signupFields = document.querySelectorAll('.signup-only');
@@ -76,19 +75,61 @@
             if (isLogin) {
                 title.innerText = "Đăng nhập";
                 subtitle.innerText = "Chào mừng bạn quay trở lại!";
-                submitBtn.innerText = "Tiếp tục";
+                submitBtn.innerText = "Đăng nhập";
                 footerText.innerText = "Bạn chưa có tài khoản?";
                 toggleLink.innerText = "Đăng ký ngay";
-                signupFields.forEach(field => field.style.display = 'none');
+                signupFields.forEach(f => f.style.display = 'none');
             } else {
                 title.innerText = "Đăng ký";
-                subtitle.innerText = "Tạo tài khoản để trải nghiệm Airbnb.";
-                submitBtn.innerText = "Đăng ký";
+                subtitle.innerText = "Tạo tài khoản để trải nghiệm dịch vụ.";
+                submitBtn.innerText = "Tạo tài khoản";
                 footerText.innerText = "Bạn đã có tài khoản?";
                 toggleLink.innerText = "Đăng nhập";
-                signupFields.forEach(field => field.style.display = 'block');
+                signupFields.forEach(f => f.style.display = 'block');
             }
         }
+
+        // 2. Xử lý khi nhấn nút Gửi Form
+        document.getElementById('auth-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('auth-email').value.trim();
+            const password = document.getElementById('auth-password').value.trim();
+
+            // Lấy danh sách tài khoản đã có, nếu chưa có thì tạo mảng trống
+            let users = JSON.parse(localStorage.getItem('allUsers')) || [];
+
+            if (isLogin) {
+                // --- ĐĂNG NHẬP ---
+                // Tìm xem có email và pass nào khớp trong danh sách allUsers không
+                const userFound = users.find(u => u.email === email && u.password === password);
+
+                if (userFound) {
+                    localStorage.setItem('currentUser', JSON.stringify(userFound)); // Chỉ lưu người đang online
+                    alert("Đăng nhập thành công!");
+                    window.location.href = 'homepage.html';
+                } else {
+                    alert("Email hoặc mật khẩu không đúng!");
+                }
+            } else {
+                // --- ĐĂNG KÝ ---
+                const name = document.getElementById('auth-name').value.trim();
+
+                // Kiểm tra xem email đã tồn tại chưa
+                if (users.some(u => u.email === email)) {
+                    alert("Email này đã được đăng ký!");
+                    return;
+                }
+
+                const newUser = { name, email, password };
+                users.push(newUser); // Thêm user mới vào mảng
+
+                localStorage.setItem('allUsers', JSON.stringify(users)); // Lưu lại danh sách tổng
+                localStorage.setItem('currentUser', JSON.stringify(newUser)); // Đăng nhập luôn cho user mới
+
+                alert("Đăng ký thành công!");
+                window.location.href = 'homepage.html';
+            }
+        });
     </script>
 
 </body>
