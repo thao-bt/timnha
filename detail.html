@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="image/mobile-nav-logo.png" sizes="96x96" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>Timnha | Good house for renting</title>
+
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="detail.css">
+    <script src="https://kit.fontawesome.com/fd36773b43.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body class="detail-page">
+
+    <!--Sticky menu start-->
+
+        <div class="mobile-sticky-menu-container">
+            <div class="mobile-sticky-menu-search">
+                <div class="search-icon-container1">
+                    <i class="fa-solid fa-magnifying-glass fa-sm"></i>
+                </div>
+                <p class="mobile-search-p">Bắt đầu tìm kiếm</p>
+            </div>
+        </div>
+
+    <!--Sticky menu end-->
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <img class="nav-logo" src="image/nav-logo.png"> 
+                    <img class="mobile-nav-logo" src="image/mobile-nav-logo.png">
+                </div>
+                <div class="header-search-bar" role="search" aria-label="Search destinations">
+                    <div class="header-search-item">
+                        <p class="header-search-label">Địa điểm</p>
+                        <p class="header-search-subtext">Tìm điểm đến</p>
+                    </div>
+                    <div class="header-search-divider"></div>
+                    <div class="header-search-item">
+                        <p class="header-search-label">Giá</p>
+                        <input class="header-search-subtext header-search-number-input" type="number" min="0" step="1" placeholder="Chọn giá" aria-label="Chọn giá">
+                    </div>
+                    <div class="header-search-divider"></div>
+                    <div class="header-search-item">
+                        <p class="header-search-label">Khách</p>
+                        <p class="header-search-subtext">Thêm khách</p>
+                    </div>
+                    <button class="header-search-button" type="button" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <ul class="nav-menu-links">
+                    <li class="nav-icon-container hamburger-btn">
+                        <a href="" class="nav-link">
+                            <i style="color: black" class="fa-solid fa-bars"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!--Mobile Menu fixed-->
+    <div class="container">
+        <div class="mobile-menu-fixed">
+            <div class="mobile-menu-container">
+                <ul class="mobile-menu">
+                    <li class="mobile-menu-li menu-flexbox">
+                        <a class="mobile-menu-link">
+                            <i class="fa-solid fa-question fa-xs"></i>
+                        </a>
+                        <a href="" class="mobile-menu-link">Trung tâm trợ giúp</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="mobile-menu-li">
+                        <a href="" class="mobile-menu-link">Đăng nhập hoặc đăng kí</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <main class="detail-container">
+        <section class="title-section">
+            <h1>Chi tiết chỗ ở</h1>
+        </section>
+
+        <section class="photo-grid">
+            <div class="big-photo">
+                <img src="image/nav-logo.png" alt="Ảnh chỗ ở">
+            </div>
+            <div class="small-photos">
+                <img src="image/nav-logo.png" alt="Ảnh chỗ ở">
+                <img src="image/nav-logo.png" alt="Ảnh chỗ ở">
+                <img src="image/nav-logo.png" alt="Ảnh chỗ ở">
+                <img src="image/nav-logo.png" alt="Ảnh chỗ ở">
+
+                <button class="show-all-btn">Hiển thị tất cả ảnh</button>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="info-column">
+                <hr>
+                <div class="host-info">
+                    <img class="host-avatar" src="image/nav-logo.png" alt="Host avatar">
+                    <div>
+                        <p class="host-name"><b>Host</b></p>
+                        <p class="grey-text">Thông tin host</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+                                style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+                                <path d="m26 24v4h-20v-4z m-8-22v18h5l-7 7-7-7h5v-18z"></path>
+                            </svg>
+                        </div>
+                        <div class="highlight-text">
+                            <p class="title">Tự nhận phòng</p>
+                            <p class="desc">Tự nhận phòng bằng cách nhập mã số vào cửa.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+                                style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+                                <path
+                                    d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zm0 14c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="highlight-text">
+                            <p class="title">Khu vực có thể đi bộ</p>
+                            <p class="desc">Khách cho biết khu vực này rất dễ đi lại.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+                                style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+                                <path
+                                    d="M26 4a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h20zm0 2H6v20h20V6zM14 12v2H8v-2h6zm10 0v2h-8v-2h8zM14 16v2H8v-2h6zm10 0v2h-8v-2h8z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="highlight-text">
+                            <p class="title">Phòng trong căn hộ cho thuê</p>
+                            <p class="desc">Bạn sẽ có phòng riêng trong một ngôi nhà và được sử dụng những khu vực
+                                chung.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+                <section class="description-section">
+                    <div class="description-content"></div>
+                    <button class="show-more-btn" id="openDescription">Hiển thị thêm</button>
+                </section>
+                <div class="modal-overlay" id="descriptionModal">
+                    <div class="modal-content">
+                        <button class="close-modal" id="closeDescription">&times;</button>
+                        <div class="modal-body">
+                            <h2>Giới thiệu về chỗ ở này</h2>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <section class="amenities-section">
+                    <h2 class="section-title">Nơi này có những gì cho bạn</h2>
+
+                    <div class="amenities-grid"></div>
+
+                    <button class="show-all-amenities">Hiển thị tất cả tiện nghi</button>
+                </section>
+                <div class="modal-overlay" id="amenitiesModal">
+                    <div class="modal-content amenities-modal-content">
+                        <button class="close-modal" id="closeAmenities">&times;</button>
+                        <div class="modal-body">
+                            <h2 class="modal-title">Nơi này có những gì cho bạn</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-sidebar">
+                <div class="booking-card">
+                    <div class="booking-price-row">
+                        <span class="old-price">₫1.325.962</span>
+                        <span class="current-price">₫1.213.060</span>
+                        <span class="price-unit">cho 2 đêm</span>
+                    </div>
+                    <div class="date-picker">
+                        <div class="date-box">
+                            NHẬN PHÒNG <br>
+                            <input class="booking-date-input" id="booking-checkin-input" type="date" aria-label="Ngày nhận phòng">
+                        </div>
+                        <div class="date-box">
+                            TRẢ PHÒNG <br>
+                            <input class="booking-date-input" id="booking-checkout-input" type="date" aria-label="Ngày trả phòng">
+                        </div>
+                    </div>
+                    <div class="guest-picker">
+                        KHÁCH <br>
+                        <input class="booking-guests-input" id="booking-guests-input" type="number" min="1" step="1" value="1" aria-label="Số khách">
+                    </div>
+                    <button class="btn-primary">Đặt phòng</button>
+                </div>
+            </div>
+
+        </section>
+        <hr class="section-divider">
+
+        <section class="location-section">
+            <h2 class="section-title">Nơi bạn sẽ đến</h2>
+
+            <div class="map-container">
+                <div class="map-embed-wrapper">
+                    <iframe
+                        src=""
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
+        </section>
+
+    <!--Footer start-->
+    <footer class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-title">Nhóm 12</h3>
+                <ul>
+                    <li class="footer-li"><a href="#">Bùi Thanh Thảo</a></li>
+                    <li class="footer-li"><a href="#">Nguyễn Tuấn Anh</a></li>
+                    <li class="footer-li"><a href="#">Nguyễn Ngô Minh Đức</a></li>
+                    <li class="footer-li"><a href="#">Tống Nhật Linh</a></li>
+                </ul>
+            </div>
+    </footer>
+    <!--Footer end-->
+    </main>
+
+    <script src="detail.js"></script>
+</body>
+</html>
