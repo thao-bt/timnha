@@ -20,11 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!checkin.value) checkin.value = toISODate(today);
     if (!checkout.value) checkout.value = toISODate(tomorrow);
     syncDates(checkin, checkout);
-    guests.value = sanitizeGuests(guests.value);
-    const sync = () => { syncDates(checkin, checkout); guests.value = sanitizeGuests(guests.value); };
+    const sync = () => { syncDates(checkin, checkout); };
     checkin.addEventListener('change', sync);
     checkout.addEventListener('change', sync);
-    guests.addEventListener('input', sync);
   }
 
   if (form && success) {
