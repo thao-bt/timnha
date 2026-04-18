@@ -6,9 +6,14 @@
     "bed": "1 giường King",
     "price": "₫7.657.322",
     "amenity": "Wi-fi, Không gian riêng để làm việc, Chỗ đỗ xe miễn phí, Bồn tắm nước nóng, Hồ bơi ngoài trời bao quanh bởi cây cối, TV, Máy giặt (dịch vụ), Nhà hàng, Gym & Spa",
-    "image": "Vinpearl_1",
+    "image": "Sheraton_5.png",
     "destination": "Hà Nội",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Sheraton hotel",
+    "image_1": "Sheraton_1.png",
+    "image_2": "Sheraton_2.png",
+    "image_3": "Sheraton_3.png",
+    "image_4": "Sheraton_4.png"
   },
   {
     "id": 2,
@@ -17,9 +22,14 @@
     "bed": "1 giường lớn",
     "price": "₫4.234.319",
     "amenity": "Bể bơi vô cực trên tầng mái, Wi-fi, Không gian làm việc, Chỗ đỗ xe, Bồn tắm, TV, Máy giặt (dịch vụ), Khu vực Wellness (Spa & Gym)",
-    "image": "Vinpearl_2",
+    "image": "Meritel_5.png",
     "destination": "Hà Nội",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Meritel Hotel",
+    "image_1": "Meritel_1.png",
+    "image_2": "Meritel_2.png",
+    "image_3": "Meritel_3.png",
+    "image_4": "Meritel_4.png"
   },
   {
     "id": 3,
@@ -28,9 +38,14 @@
     "bed": "1 giường King",
     "price": "₫1.783.699",
     "amenity": "Wi-fi, Cloudy Sky Bar, Dịch vụ Spa chuyên sâu, Không gian làm việc, TV, Máy giặt (dịch vụ), Nhà hàng buffet",
-    "image": "Vinpearl_3",
+    "image": "JM Marvel _5.png",
     "destination": "Hà Nội",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "JM Marvel Hotel & Spa",
+    "image_1": "JM Marvel _1.png",
+    "image_2": "JM Marvel _2.png",
+    "image_3": "JM Marvel _3.png",
+    "image_4": "JM Marvel _4.png"
   },
   {
     "id": 4,
@@ -41,7 +56,12 @@
     "amenity": "Bể bơi ngoài trời, Wi-fi, O'Spa Lotus, Nhà hàng Thăng Long, Không gian làm việc, TV, Chỗ đỗ xe",
     "image": "Vinpearl_4",
     "destination": "Hà Nội",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "The Oriental Jade Hotel",
+    "image_1": "The Oriental Jade_1.png",
+    "image_2": "The Oriental Jade_2.png",
+    "image_3": "The Oriental Jade_3.png",
+    "image_4": "The Oriental Jade_4.png"
   },
   {
     "id": 5,
@@ -52,7 +72,12 @@
     "amenity": "Wi-fi, Hồ bơi ngoài trời, Khu vực xông hơi (sauna), Bể sục Jacuzzi, Gym, Không gian làm việc, TV, Máy giặt (dịch vụ)",
     "image": "Vinpearl_5",
     "destination": "Hà Nội",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Hotel Du Parc Ha Noi",
+    "image_1": "Hotel Du Parc_1.png",
+    "image_2": "Hotel Du Parc_2.png",
+    "image_3": "Hotel Du Parc_3.png",
+    "image_4": "Hotel Du Parc_4.png"
   },
   {
     "id": 6,
@@ -63,7 +88,12 @@
     "amenity": "Bể bơi vô cực tầng thượng, Wi-fi, Ignite Sky Bar, Peridot Spa, Không gian làm việc, Chỗ đỗ xe, TV, Máy giặt (dịch vụ), Gym",
     "image": "Vinpearl_6",
     "destination": "Hà Nội",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Peridot Grand Luxury Hotel",
+    "image_1": "Peridot Grand Luxury _1.png",
+    "image_2": "Peridot Grand Luxury _2.png",
+    "image_3": "Peridot Grand Luxury _3.png",
+    "image_4": "Peridot Grand Luxury _4.png"
   },
   {
     "id": 7,
@@ -74,7 +104,12 @@
     "amenity": "Wi-fi, Không gian riêng để làm việc, Chỗ đỗ xe miễn phí, Bồn tắm nằm, Hồ bơi ngoài trời, Gym, TV, Máy pha cà phê",
     "image": "Vinpearl_7",
     "destination": "Đà Nẵng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Hilton Hotel ( DN )",
+    "image_1": "Hilton_1.png",
+    "image_2": "Hilton_2.png",
+    "image_3": "Hilton_3.png",
+    "image_4": "Hilton_4.png"
   },
   {
     "id": 8,
@@ -85,7 +120,12 @@
     "amenity": "Hồ bơi vô cực hướng biển, Wi-fi, La Belle Vie Spa, Phòng xông hơi, Chỗ đỗ xe miễn phí, TV, Máy giặt (dịch vụ), Nhà hàng",
     "image": "Vinpearl_8",
     "destination": "Đà Nẵng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "DLG Hotel Da Nang",
+    "image_1": "DLG_1.png",
+    "image_2": "DLG_2.png",
+    "image_3": "DLG_3.png",
+    "image_4": "DLG_4.png"
   },
   {
     "id": 9,
@@ -94,9 +134,14 @@
     "bed": "1 giường lớn",
     "price": "₫3.440.066",
     "amenity": "Bể bơi vô cực tầng thượng, Lối ra bãi biển, Wi-fi, M Lounge, Spa chuyên sâu, Gym view biển, TV, Không gian làm việc",
-    "image": "Vinpearl_9",
+    "image": "M hotel _5.png",
     "destination": "Đà Nẵng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "M Hotel Da Nang",
+    "image_1": "M hotel _1.png",
+    "image_2": "M hotel _2.png",
+    "image_3": "M hotel _3.png",
+    "image_4": "M hotel _4.png"
   },
   {
     "id": 10,
@@ -107,7 +152,12 @@
     "amenity": "Sky36 Bar, Wi-fi, Hồ bơi ngoài trời, InBalance Spa, Gym hiện đại, Không gian làm việc, Chỗ đỗ xe, TV, Máy giặt (dịch vụ)",
     "image": "Vinpearl_10",
     "destination": "Đà Nẵng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Novotel Da Nang Premier Han River",
+    "image_1": "Novotel_1.png",
+    "image_2": "Novotel_2.png",
+    "image_3": "Novotel_3.png",
+    "image_4": "Novotel_4.png"
   },
   {
     "id": 11,
@@ -118,7 +168,12 @@
     "amenity": "Hồ bơi ngoài trời, Wi-fi, Bồn tắm nước nóng, Chỗ đỗ xe miễn phí, TV, Gym, Nhà hàng La Brasserie, Piano Bar",
     "image": "Vinpearl_11",
     "destination": "Đà Nẵng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Indochine Palace",
+    "image_1": "Indochine_1.png",
+    "image_2": "Indochine_2.png",
+    "image_3": "Indochine_3.png",
+    "image_4": "Indochine_4.png"
   },
   {
     "id": 12,
@@ -127,9 +182,14 @@
     "bed": "1 giường King",
     "price": "₫1.574.229",
     "amenity": "Bể bơi ngoài trời, Wi-fi, Senna Spa, Nhà hàng Senna, Chỗ đỗ xe miễn phí, TV, Bồn tắm, Không gian làm việc",
-    "image": "Vinpearl_12",
+    "image": "Senna Hue _5.png",
     "destination": "Đà Nẵng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Senna Hue Hotel",
+    "image_1": "Senna Hue _1.png",
+    "image_2": "Senna Hue _2.png",
+    "image_3": "Senna Hue _3.png",
+    "image_4": "Senna Hue _4.png"
   },
   {
     "id": 13,
@@ -138,9 +198,14 @@
     "bed": "1 giường lớn",
     "price": "₫3.038.886",
     "amenity": "Hồ bơi tầng thượng, Sauna, Wi-fi, Adran Tea House, Gym, Spa trị liệu, Không gian làm việc, TV, Chỗ đỗ xe",
-    "image": "Vinpearl_13",
+    "image": "Au Lac Charner_1.png",
     "destination": "TP. Hồ Chí Minh",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Au Lac Charner Hotel",
+    "image_1": "Au Lac Charner_2.png",
+    "image_2": "Au Lac Charner_3.png",
+    "image_3": "Au Lac Charner_4.png",
+    "image_4": "Au Lac Charner_5.png"
   },
   {
     "id": 14,
@@ -151,7 +216,12 @@
     "amenity": "Bể bơi vô cực, Rooftop Bar, Wi-fi, Sauna & Jacuzzi kiểu Nhật, Không gian làm việc, TV, Chỗ đỗ xe, Máy giặt",
     "image": "Vinpearl_14",
     "destination": "TP. Hồ Chí Minh",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Sky Gem Hotel Sora",
+    "image_1": "Sky Gem_1.png",
+    "image_2": "Sky Gem_2.png",
+    "image_3": "Sky Gem_3.png",
+    "image_4": "Sky Gem_4.png"
   },
   {
     "id": 15,
@@ -162,7 +232,12 @@
     "amenity": "Wi-fi, Không gian xanh, Bồn tắm nằm, Không gian làm việc, TV, Máy giặt (dịch vụ), Chỗ đỗ xe",
     "image": "Vinpearl_15",
     "destination": "TP. Hồ Chí Minh",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "PureJoy Hotel Saigon",
+    "image_1": "PureJoy_1.png",
+    "image_2": "PureJoy_2.png",
+    "image_3": "PureJoy_3.png",
+    "image_4": "PureJoy_4.png"
   },
   {
     "id": 16,
@@ -173,7 +248,12 @@
     "amenity": "Wi-fi, Bếp đầy đủ dụng cụ, Máy giặt trong phòng, Gym hiện đại, Không gian làm việc, Chỗ đỗ xe, TV",
     "image": "Vinpearl_16",
     "destination": "TP. Hồ Chí Minh",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Oakwood Hotel & Apartments Saigon",
+    "image_1": "Oakwood_1.png",
+    "image_2": "Oakwood_2.png",
+    "image_3": "Oakwood_3.png",
+    "image_4": "Oakwood_4.png"
   },
   {
     "id": 17,
@@ -184,7 +264,12 @@
     "amenity": "Hồ bơi ngoài trời, Wi-fi, Executive Lounge, Spa chuyên nghiệp, Gym, Không gian làm việc, Chỗ đỗ xe, TV",
     "image": "Vinpearl_17",
     "destination": "TP. Hồ Chí Minh",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Eastin Grand Sài Gòn Hotel",
+    "image_1": "Eastin Grand_1.png",
+    "image_2": "Eastin Grand_2.png",
+    "image_3": "Eastin Grand_3.png",
+    "image_4": "Eastin Grand_4.png"
   },
   {
     "id": 18,
@@ -195,7 +280,12 @@
     "amenity": "Bồn cầu thông minh, Wi-fi, Bữa sáng chuẩn Nhật, Bồn tắm nằm sâu, Không gian làm việc, TV, Máy giặt",
     "image": "Vinpearl_18",
     "destination": "TP. Hồ Chí Minh",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Edoya Hotel Dong Hoi",
+    "image_1": "Edoya_1.png",
+    "image_2": "Edoya_2.png",
+    "image_3": "Edoya_3.png",
+    "image_4": "Edoya_4.png"
   },
   {
     "id": 19,
@@ -206,7 +296,12 @@
     "amenity": "Wi-fi, Không gian riêng làm việc, Chỗ đỗ xe miễn phí, Hồ bơi ngoài trời, Alfresco Coffee, TV, Máy giặt",
     "image": "Vinpearl_19",
     "destination": "Hải Phòng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "TTC Hotel Cần Thơ",
+    "image_1": "TTC_1.png",
+    "image_2": "TTC_2.png",
+    "image_3": "TTC_3.png",
+    "image_4": "TTC_4.png"
   },
   {
     "id": 20,
@@ -217,7 +312,12 @@
     "amenity": "Bể bơi vô cực hướng biển, Wi-fi, Hyams Lounge, Spa trị liệu, Gym, TV, Chỗ đỗ xe miễn phí, Tiện nghi căn hộ",
     "image": "Vinpearl_20",
     "destination": "Hải Phòng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Grand Hyams Hotel",
+    "image_1": "Grand Hyams_1.png",
+    "image_2": "Grand Hyams_2.png",
+    "image_3": "Grand Hyams_3.png",
+    "image_4": "Grand Hyams_4.png"
   },
   {
     "id": 21,
@@ -228,7 +328,12 @@
     "amenity": "Wi-fi, Không gian riêng để làm việc, Chỗ đỗ xe miễn phí, Hồ bơi ngoài trời, Alfresco Coffee, TV, Máy giặt (dịch vụ), Nhà hàng",
     "image": "Vinpearl_1",
     "destination": "Hải Phòng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "TTC Hotel Cần Thơ",
+    "image_1": "TTC_1.png",
+    "image_2": "TTC_2.png",
+    "image_3": "TTC_3.png",
+    "image_4": "TTC_4.png"
   },
   {
     "id": 22,
@@ -239,7 +344,12 @@
     "amenity": "Hồ bơi tầng thượng & Sauna, Wi-fi, Adran Tea House, Gym, Spa trị liệu, Không gian làm việc, TV, Chỗ đỗ xe",
     "image": "Vinpearl_2",
     "destination": "Hải Phòng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Au Lac Charner Hotel",
+    "image_1": "Au Lac Charner_1.png",
+    "image_2": "Au Lac Charner_2.png",
+    "image_3": "Au Lac Charner_3.png",
+    "image_4": "Au Lac Charner_4.png"
   },
   {
     "id": 23,
@@ -250,7 +360,12 @@
     "amenity": "Bể bơi vô cực & Rooftop Bar, Wi-fi, Sauna & Jacuzzi kiểu Nhật, Không gian làm việc, TV, Chỗ đỗ xe, Máy giặt (dịch vụ)",
     "image": "Vinpearl_3",
     "destination": "Hải Phòng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Sky Gem Hotel Sora",
+    "image_1": "Sky Gem_1.png",
+    "image_2": "Sky Gem_2.png",
+    "image_3": "Sky Gem_3.png",
+    "image_4": "Sky Gem_4.png"
   },
   {
     "id": 24,
@@ -261,7 +376,12 @@
     "amenity": "Wi-fi, Không gian xanh thư giãn, Bồn tắm nằm, Không gian làm việc, TV, Máy giặt (dịch vụ), Chỗ đỗ xe",
     "image": "Vinpearl_4",
     "destination": "Huế",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "PureJoy Hotel Saigon",
+    "image_1": "PureJoy_1.png",
+    "image_2": "PureJoy_2.png",
+    "image_3": "PureJoy_3.png",
+    "image_4": "PureJoy_4.png"
   },
   {
     "id": 25,
@@ -272,7 +392,12 @@
     "amenity": "Wi-fi, Bếp đầy đủ dụng cụ, Máy giặt trong phòng, Gym hiện đại, Không gian làm việc riêng, Chỗ đỗ xe, TV",
     "image": "Vinpearl_5",
     "destination": "Hải Phòng",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Oakwood Hotel & Apartments Saigon",
+    "image_1": "Oakwood_1.png",
+    "image_2": "Oakwood_2.png",
+    "image_3": "Oakwood_3.png",
+    "image_4": "Oakwood_4.png"
   },
   {
     "id": 26,
@@ -283,7 +408,12 @@
     "amenity": "Lối ra bãi biển riêng, Wi-fi, Bồn tắm đá cẩm thạch, Imperial Spa, Gym, Chỗ đỗ xe miễn phí, TV, Nhà hàng Á - Âu",
     "image": "Vinpearl_6",
     "destination": "Huế",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "The Imperial Hotel",
+    "image_1": "Imperial_1.png",
+    "image_2": "Imperial_2.png",
+    "image_3": "Imperial_3.png",
+    "image_4": "Imperial_4.png"
   },
   {
     "id": 27,
@@ -294,7 +424,12 @@
     "amenity": "Hồ bơi vô cực tầng thượng, Wi-fi, Sky High Lounge, Gym chuyên nghiệp, Nhà hàng Garden, Không gian làm việc, TV, Chỗ đỗ xe miễn phí",
     "image": "Vinpearl_7",
     "destination": "Huế",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Vias Hotel Vung Tau",
+    "image_1": "Vias_1.png",
+    "image_2": "Vias_2.png",
+    "image_3": "Vias_3.png",
+    "image_4": "Vias_4.png"
   },
   {
     "id": 28,
@@ -305,7 +440,12 @@
     "amenity": "Hồ bơi ngoài trời, Wi-fi, Executive Lounge, Spa chuyên nghiệp, Gym, Không gian làm việc, Chỗ đỗ xe, TV, Nhà hàng hải sản",
     "image": "Vinpearl_8",
     "destination": "Huế",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Eastin Grand Sài Gòn Hotel",
+    "image_1": "Eastin Grand_1.png",
+    "image_2": "Eastin Grand_2.png",
+    "image_3": "Eastin Grand_3.png",
+    "image_4": "Eastin Grand_4.png"
   },
   {
     "id": 29,
@@ -316,7 +456,12 @@
     "amenity": "Bồn cầu thông minh (Washlet), Wi-fi, Bữa sáng chuẩn Nhật, Bồn tắm nằm sâu kiểu Nhật, Không gian làm việc, TV, Máy giặt (dịch vụ), Chỗ đỗ xe",
     "image": "Vinpearl_9",
     "destination": "Huế",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Edoya Hotel Dong Hoi",
+    "image_1": "Edoya_1.png",
+    "image_2": "Edoya_2.png",
+    "image_3": "Edoya_3.png",
+    "image_4": "Edoya_4.png"
   },
   {
     "id": 30,
@@ -327,10 +472,11 @@
     "amenity": "Hồ bơi tầng thượng, Wi-fi, Nhà hàng Lotus (món Việt), Gym, Spa, Không gian làm việc, Chỗ đỗ xe, TV",
     "image": "Vinpearl_10",
     "destination": "Huế",
-    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+    "map_link": "google.com/maps/place/Sheraton+Hanoi+West/@21.0271403,105.767351,17z/data=!3m1!4b1!4m9!3m8!1s0x313455c3ab6d46a7:0x974b8adb8575af98!5m2!4m1!1i2!8m2!3d21.0271403!4d105.767351!16s%2Fg%2F11fmxnmm12?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
+    "folder": "Lotus Sai Gon Hotel",
+    "image_1": "Lotus_1.png",
+    "image_2": "Lotus_2.png",
+    "image_3": "Lotus_3.png",
+    "image_4": "Lotus_4.png"
   }
 ]
-
-
-
-  

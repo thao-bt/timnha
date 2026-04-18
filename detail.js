@@ -1,365 +1,154 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const imageBase = 'image/Dữ Liệu Khách Sạn/Vinpearl BeachFront Nha Trang/Ảnh';
+  const [checkin, checkout, guests, form, success] = ['booking-checkin-input', 'booking-checkout-input', 'booking-guests-input', 'booking-form', 'booking-success-message'].map(id => document.getElementById(id));
+  let msgTimer = null;
 
-  const bookingCheckinInput = document.getElementById('booking-checkin-input');
-  const bookingCheckoutInput = document.getElementById('booking-checkout-input');
-  const bookingGuestsInput = document.getElementById('booking-guests-input');
-
-  const toISODate = (date) => {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+  const toISODate = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const sanitizeGuests = v => {
+    const n = Number.parseInt(v, 10);
+    return Number.isFinite(n) && n > 0 ? String(n) : '1';
   };
-
-  const sanitizeGuestValue = (value) => {
-    const guests = Number.parseInt(value, 10);
-    return Number.isFinite(guests) && guests > 0 ? String(guests) : '1';
-  };
-
-  const enforceDateRange = (startInput, endInput) => {
-    if (!startInput || !endInput) {
-      return;
-    }
-
-    endInput.min = startInput.value;
-
-    if (endInput.value < startInput.value) {
-      endInput.value = startInput.value;
+  const syncDates = (start, end) => {
+    if (start && end) {
+      end.min = start.value;
+      if (end.value < start.value) end.value = start.value;
     }
   };
 
-  const initializeDefaults = () => {
-    const startInput = bookingCheckinInput;
-    const endInput = bookingCheckoutInput;
-    const guestsInput = bookingGuestsInput;
-
-    if (!startInput || !endInput || !guestsInput) {
-      return;
-    }
-
-    const today = new Date();
-    const tomorrow = new Date(today);
+  if (checkin && checkout && guests) {
+    const today = new Date(), tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
-
-    if (!startInput.value) {
-      startInput.value = toISODate(today);
-    }
-
-    if (!endInput.value) {
-      endInput.value = toISODate(tomorrow);
-    }
-
-    enforceDateRange(startInput, endInput);
-    guestsInput.value = sanitizeGuestValue(guestsInput.value);
-  };
-
-  const syncBookingInputs = () => {
-    if (!bookingCheckinInput || !bookingCheckoutInput || !bookingGuestsInput) {
-      return;
-    }
-
-    enforceDateRange(bookingCheckinInput, bookingCheckoutInput);
-    bookingGuestsInput.value = sanitizeGuestValue(bookingGuestsInput.value);
-  };
-
-  initializeDefaults();
-
-  if (bookingCheckinInput && bookingCheckoutInput && bookingGuestsInput) {
-    syncBookingInputs();
-
-    bookingCheckinInput.addEventListener('change', syncBookingInputs);
-    bookingCheckoutInput.addEventListener('change', syncBookingInputs);
-    bookingGuestsInput.addEventListener('input', syncBookingInputs);
+    if (!checkin.value) checkin.value = toISODate(today);
+    if (!checkout.value) checkout.value = toISODate(tomorrow);
+    syncDates(checkin, checkout);
+    guests.value = sanitizeGuests(guests.value);
+    const sync = () => { syncDates(checkin, checkout); guests.value = sanitizeGuests(guests.value); };
+    checkin.addEventListener('change', sync);
+    checkout.addEventListener('change', sync);
+    guests.addEventListener('input', sync);
   }
 
-  const getImageUrl = (imageName) => {
-    const fileName = String(imageName || '').trim();
+  if (form && success) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      success.textContent = 'Bạn đã đặt phòng thành công';
+      success.classList.add('is-visible');
+      clearTimeout(msgTimer);
+      msgTimer = setTimeout(() => success.classList.remove('is-visible'), 4000);
+    });
+  }
 
-    if (!fileName) {
-      return 'image/nav-logo.png';
+  const setupModal = (openSel, closeId, modalId) => {
+    const open = typeof openSel === 'string' ? document.querySelector(openSel) : document.getElementById(openSel);
+    const close = document.getElementById(closeId);
+    const modal = document.getElementById(modalId);
+    if (open && modal) {
+      open.addEventListener('click', () => { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; });
+      close.addEventListener('click', () => { modal.style.display = 'none'; document.body.style.overflow = 'auto'; });
     }
-
-    return encodeURI(`${imageBase}/${fileName}.png`);
   };
+  setupModal('openDescription', 'closeDescription', 'descriptionModal');
+  setupModal('.show-all-amenities', 'closeAmenities', 'amenitiesModal');
 
-      // 3. XỬ LÝ MODAL MÔ TẢ & TIỆN NGHI
-    const openBtn = document.getElementById('openDescription');
-    const closeBtn = document.getElementById('closeDescription');
-    const modal = document.getElementById('descriptionModal');
-
-    if (openBtn && modal) {
-        openBtn.addEventListener('click', () => {
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        });
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-    }
-
-    const openAmenitiesBtn = document.querySelector('.show-all-amenities');
-    const closeAmenitiesBtn = document.getElementById('closeAmenities');
-    const amenitiesModal = document.getElementById('amenitiesModal');
-
-    if (openAmenitiesBtn && amenitiesModal) {
-        openAmenitiesBtn.addEventListener('click', () => {
-            amenitiesModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        });
-        closeAmenitiesBtn.addEventListener('click', () => {
-            amenitiesModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-    }
-
-  const normalizeMapLink = (mapLink) => {
-    const value = String(mapLink || '').trim();
-
-    if (!value) {
-      return '';
-    }
-
-    if (/^https?:\/\//i.test(value)) {
-      return value;
-    }
-
-    return `https://${value}`;
+  const normalizeMapLink = link => {
+    const v = String(link || '').trim();
+    return v && !/^https?:\/\//i.test(v) ? `https://${v}` : v;
   };
-
   const getSelectedId = () => {
-    const params = new URLSearchParams(window.location.search);
-    const rawId = params.get('id');
-
-    if (!rawId) {
-      return null;
-    }
-
-    const parsed = Number(rawId);
+    const id = new URLSearchParams(window.location.search).get('id');
+    const parsed = Number(id);
     return Number.isFinite(parsed) ? parsed : null;
   };
 
-  const renderAmenities = (place) => {
-    const amenitiesGrid = document.querySelector('.amenities-grid');
-    const showAllAmenitiesBtn = document.querySelector('.show-all-amenities');
-    const amenitiesModalBody = document.querySelector('#amenitiesModal .modal-body');
 
-    const amenities = String(place.amenity || '')
-      .split(',')
-      .map((item) => item.trim())
-      .filter(Boolean);
+  const renderAmenities = place => {
+    const grid = document.querySelector('.amenities-grid');
+    const btn = document.querySelector('.show-all-amenities');
+    const modal = document.querySelector('#amenitiesModal .modal-body');
+    const amenities = String(place.amenity || '').split(',').map(s => s.trim()).filter(Boolean);
 
-    if (!amenities.length || !amenitiesGrid) {
-      return;
-    }
-
-    amenitiesGrid.innerHTML = '';
-
-    amenities.slice(0, 8).forEach((amenity) => {
-      const amenityItem = document.createElement('div');
-      amenityItem.className = 'amenity-item';
-
-      const icon = document.createElement('span');
-      icon.textContent = '•';
-      icon.setAttribute('aria-hidden', 'true');
-
-      const label = document.createElement('span');
-      label.textContent = amenity;
-
-      amenityItem.append(icon, label);
-      amenitiesGrid.appendChild(amenityItem);
+    if (!amenities.length || !grid) return;
+    grid.innerHTML = '';
+    amenities.slice(0, 8).forEach(a => {
+      const item = document.createElement('div');
+      item.className = 'amenity-item';
+      item.innerHTML = `<span aria-hidden="true">•</span><span>${a}</span>`;
+      grid.appendChild(item);
     });
 
-    if (showAllAmenitiesBtn) {
-      showAllAmenitiesBtn.textContent = `Hiển thị tất cả ${amenities.length} tiện nghi`;
-    }
-
-    if (amenitiesModalBody) {
-      const modalTitle = amenitiesModalBody.querySelector('.modal-title');
-      amenitiesModalBody.innerHTML = '';
-
-      if (modalTitle) {
-        amenitiesModalBody.appendChild(modalTitle);
-      } else {
-        const generatedTitle = document.createElement('h2');
-        generatedTitle.className = 'modal-title';
-        generatedTitle.textContent = 'Nơi này có những gì cho bạn';
-        amenitiesModalBody.appendChild(generatedTitle);
-      }
-
-      const amenityGroup = document.createElement('div');
-      amenityGroup.className = 'amenity-group';
-
-      const groupTitle = document.createElement('h3');
-      groupTitle.textContent = 'Tiện nghi';
-      amenityGroup.appendChild(groupTitle);
-
-      amenities.forEach((amenity) => {
-        const amenityListItem = document.createElement('div');
-        amenityListItem.className = 'amenity-list-item';
-        amenityListItem.textContent = amenity;
-        amenityGroup.appendChild(amenityListItem);
-      });
-
-      amenitiesModalBody.appendChild(amenityGroup);
+    if (btn) btn.textContent = `Hiển thị tất cả ${amenities.length} tiện nghi`;
+    if (modal) {
+      modal.innerHTML = `<h2 class="modal-title">Nơi này có những gì cho bạn</h2><div class="amenity-group"><h3>Tiện nghi</h3>${amenities.map(a => `<div class="amenity-list-item">${a}</div>`).join('')}</div>`;
     }
   };
 
-  const renderPlace = (place) => {
-    const title = document.querySelector('.title-section h1');
-    const infoTitle = document.querySelector('.info-column h2');
-    const subtitle = document.querySelector('.info-column .subtitle');
-    const hostName = document.querySelector('.host-name b');
-    const hostAvatar = document.querySelector('.host-avatar');
-    const description = document.querySelector('.description-content');
-    const modalDescription = document.querySelector('#descriptionModal .modal-body p');
-    const locationAddress = document.querySelector('.location-address');
-    const locationFooter = document.querySelector('.location-footer');
-    const locationMapFrame = document.querySelector('.map-embed-wrapper iframe');
-    const oldPriceText = document.querySelector('.booking-card .old-price');
-    const currentPriceText = document.querySelector('.booking-card .current-price');
+  const renderPlace = place => {
+    const sel = s => document.querySelector(s);
+    const img = n => encodeURI(`image/Dữ Liệu Khách Sạn/${place.folder}/Ảnh/${n}`);
 
-    const bigPhoto = document.querySelector('.big-photo img');
-    const smallPhotos = document.querySelectorAll('.small-photos img');
-    const imageUrl = getImageUrl(place.image);
+    const setContent = (s, v) => { const el = sel(s); if (el) el.textContent = v; };
+    setContent('.title-section h1', String(place.name || '').trim());
+    setContent('.info-column h2', String(place.destination || '').trim() ? `Phòng tại ${place.destination}` : '');
+    setContent('.info-column .subtitle', String(place.bed || '').trim() ? `${place.bed} · Phòng tắm khép kín` : '');
 
-    if (title) {
-      title.textContent = String(place.name || '').trim();
+    const desc = `${place.name}${place.amenity ? ' có đầy đủ tiện nghi cho kỳ nghỉ thoải mái. Tiện nghi nổi bật: ' + place.amenity : ''}`;
+    setContent('.description-content', desc);
+    setContent('#descriptionModal .modal-body p', desc);
+    setContent('.location-address', place.destination || '');
+
+    const big = sel('.big-photo img');
+    if (big) {
+      big.src = img(place.image);
+      big.alt = place.name;
+      big.loading = 'eager';
+      big.onerror = () => big.src = 'image/nav-logo.png';
     }
 
-    if (infoTitle) {
-      infoTitle.textContent = String(place.destination || '').trim()
-        ? `Phòng tại ${String(place.destination).trim()}`
-        : '';
-    }
-
-    if (subtitle) {
-      const bedText = String(place.bed || '').trim().toLowerCase();
-      subtitle.textContent = bedText ? `${bedText} · Phòng tắm khép kín` : '';
-    }
-
-    if (hostName) {
-      const hostText = String(place.name || '').trim();
-      hostName.textContent = hostText ? `Host: ${hostText}` : '';
-    }
-
-    if (hostAvatar) {
-      hostAvatar.src = imageUrl;
-      hostAvatar.alt = `Host avatar ${place.name || ''}`.trim();
-      hostAvatar.addEventListener('error', () => {
-        hostAvatar.src = 'image/nav-logo.png';
-      });
-    }
-
-    const placeName = String(place.name || '').trim();
-    const amenityText = String(place.amenity || '').trim();
-    const generatedDescription = placeName && amenityText
-      ? `${placeName} có đầy đủ tiện nghi cho kỳ nghỉ thoải mái. Tiện nghi nổi bật: ${amenityText}`
-      : amenityText;
-
-    if (description) {
-      description.textContent = generatedDescription;
-    }
-
-    if (modalDescription) {
-      modalDescription.textContent = generatedDescription;
-    }
-
-    if (bigPhoto) {
-      bigPhoto.src = imageUrl;
-      bigPhoto.alt = String(place.name || '').trim();
-      bigPhoto.loading = 'eager';
-      bigPhoto.addEventListener('error', () => {
-        bigPhoto.src = 'image/nav-logo.png';
-      });
-    }
-
-    smallPhotos.forEach((img, index) => {
-      img.src = imageUrl;
-      const baseAlt = String(place.name || '').trim();
-      img.alt = baseAlt ? `${baseAlt} ${index + 1}` : '';
-      img.loading = 'lazy';
-      img.addEventListener('error', () => {
-        img.src = 'image/nav-logo.png';
-      });
+    document.querySelectorAll('.small-photos img').forEach((el, i) => {
+      el.src = img(place[`image_${i + 1}`] || place.image);
+      el.alt = `${place.name} ${i + 1}`;
+      el.loading = 'lazy';
+      el.onerror = () => el.src = 'image/nav-logo.png';
     });
 
-    if (currentPriceText) {
-      currentPriceText.textContent = String(place.price || '').trim();
-    }
+    const price = String(place.price || '').trim();
+    setContent('.booking-card .current-price', price);
 
-    if (oldPriceText) {
-      const numericPrice = Number(String(place.price || '').replace(/[^\d]/g, ''));
-
-      if (Number.isFinite(numericPrice) && numericPrice > 0) {
-        const estimatedOldPrice = Math.round(numericPrice * 1.09);
-        oldPriceText.textContent = `₫${estimatedOldPrice.toLocaleString('vi-VN')}`;
+    const oldPrice = sel('.booking-card .old-price');
+    if (oldPrice && price) {
+      const num = Number(price.replace(/[^\d]/g, ''));
+      if (Number.isFinite(num) && num > 0) {
+        oldPrice.textContent = `₫${Math.round(num * 1.09).toLocaleString('vi-VN')}`;
       }
     }
 
-    if (locationAddress) {
-      locationAddress.textContent = String(place.destination || '').trim();
+    const mapFrame = sel('.map-embed-wrapper iframe');
+    if (mapFrame) {
+      const q = `${place.name} ${place.destination}`.trim();
+      mapFrame.src = q ? `https://www.google.com/maps?q=${encodeURIComponent(q)}&output=embed` : '';
     }
 
-    if (locationMapFrame) {
-      const mapQuerySource = `${String(place.name || '').trim()} ${String(place.destination || '').trim()}`.trim();
-
-      if (mapQuerySource) {
-        const mapQuery = encodeURIComponent(mapQuerySource);
-        locationMapFrame.src = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
-      } else {
-        locationMapFrame.src = '';
-      }
-    }
-
-    const normalizedMapLink = normalizeMapLink(place.map_link);
-
-    if (locationFooter && normalizedMapLink) {
-      locationFooter.innerHTML = '';
-      const mapAnchor = document.createElement('a');
-      mapAnchor.href = normalizedMapLink;
-      mapAnchor.target = '_blank';
-      mapAnchor.rel = 'noopener noreferrer';
-      mapAnchor.textContent = 'Xem vị trí trên Google Maps';
-      locationFooter.appendChild(mapAnchor);
+    const mapLink = sel('.location-footer');
+    if (mapLink && place.map_link) {
+      const url = normalizeMapLink(place.map_link);
+      if (url) mapLink.innerHTML = `<a href="${url}" target="_blank" rel="noopener noreferrer">Xem vị trí trên Google Maps</a>`;
     }
 
     renderAmenities(place);
-    document.title = String(place.name || '').trim()
-      ? `${String(place.name).trim()} | Timnha`
-      : 'Timnha';
+    document.title = (place.name || 'Timnha') + ' | Timnha';
   };
 
-  const renderError = (message) => {
-    const title = document.querySelector('.title-section h1');
 
-    if (title) {
-      title.textContent = message;
-    }
-  };
+  const renderError = msg => { const el = document.querySelector('.title-section h1'); if (el) el.textContent = msg; };
 
   fetch('place.json')
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Failed to load place.json (${response.status})`);
-      }
-
-      return response.json();
+    .then(r => r.ok ? r.json() : Promise.reject(`${r.status}`))
+    .then(places => {
+      const id = getSelectedId();
+      const place = places.find(p => Number(p.id) === id) || places[0];
+      renderPlace(place);
     })
-    .then((places) => {
-      if (!Array.isArray(places) || !places.length) {
-        throw new Error('place.json must contain a non-empty array of places.');
-      }
-
-      const selectedId = getSelectedId();
-      const selectedPlace =
-        places.find((place) => Number(place.id) === selectedId) || places[0];
-
-      renderPlace(selectedPlace);
-    })
-    .catch((error) => {
-      console.error(error);
-      renderError('Không thể tải dữ liệu chi tiết từ place.json.');
+    .catch(e => {
+      console.error(e);
+      renderError('Không thể tải dữ liệu chi tiết.');
     });
 });

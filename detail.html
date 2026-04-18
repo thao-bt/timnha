@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <title>Timnha | Good house for renting</title>
+    <title>Timnha | Số 1 căn hộ tại Việt Nam</title>
 
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="detail.css">
@@ -31,17 +31,18 @@
         </div>
 
     <!--Sticky menu end-->
-    <header>
+
+<header>
         <div class="container">
             <nav class="main-nav">
                 <div class="logo">
-                    <img class="nav-logo" src="image/nav-logo.png"> 
-                    <img class="mobile-nav-logo" src="image/mobile-nav-logo.png">
+                    <a href="homepage.html"><img class="nav-logo" src="image/nav-logo.png"></a>  
+                    <a href="homepage.html"><img class="mobile-nav-logo" src="image/mobile-nav-logo.png"></a> 
                 </div>
                 <div class="header-search-bar" role="search" aria-label="Search destinations">
                     <div class="header-search-item">
                         <p class="header-search-label">Địa điểm</p>
-                        <p class="header-search-subtext">Tìm điểm đến</p>
+                        <input class="header-search-subtext header-search-input" type="text" placeholder="Tìm điểm đến" aria-label="Tìm điểm đến">
                     </div>
                     <div class="header-search-divider"></div>
                     <div class="header-search-item">
@@ -51,7 +52,7 @@
                     <div class="header-search-divider"></div>
                     <div class="header-search-item">
                         <p class="header-search-label">Khách</p>
-                        <p class="header-search-subtext">Thêm khách</p>
+                        <input class="header-search-subtext header-search-input" type="number" min="1" step="1" placeholder="Thêm khách" aria-label="Thêm khách">
                     </div>
                     <button class="header-search-button" type="button" aria-label="Search">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -59,34 +60,15 @@
                 </div>
                 <ul class="nav-menu-links">
                     <li class="nav-icon-container hamburger-btn">
-                        <a href="" class="nav-link">
-                            <i style="color: black" class="fa-solid fa-bars"></i>
+                        <a href="sign-up.html" class="nav-link" data-auth-link>
+                            Đăng nhập
                         </a>
                     </li>
                 </ul>
+                
             </nav>
         </div>
     </header>
-
-    <!--Mobile Menu fixed-->
-    <div class="container">
-        <div class="mobile-menu-fixed">
-            <div class="mobile-menu-container">
-                <ul class="mobile-menu">
-                    <li class="mobile-menu-li menu-flexbox">
-                        <a class="mobile-menu-link">
-                            <i class="fa-solid fa-question fa-xs"></i>
-                        </a>
-                        <a href="" class="mobile-menu-link">Trung tâm trợ giúp</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li class="mobile-menu-li">
-                        <a href="" class="mobile-menu-link">Đăng nhập hoặc đăng kí</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <main class="detail-container">
         <section class="title-section">
@@ -102,8 +84,6 @@
                 <img src="image/nav-logo.png" alt="Ảnh chỗ ở">
                 <img src="image/nav-logo.png" alt="Ảnh chỗ ở">
                 <img src="image/nav-logo.png" alt="Ảnh chỗ ở">
-
-                <button class="show-all-btn">Hiển thị tất cả ảnh</button>
             </div>
         </section>
 
@@ -111,10 +91,10 @@
             <div class="info-column">
                 <hr>
                 <div class="host-info">
-                    <img class="host-avatar" src="image/nav-logo.png" alt="Host avatar">
+                    <img class="host-avatar" src="image/Dữ Liệu Khách Sạn/Apricot Hotel/ảnh/Screenshot 2026-04-06 170853.png" alt="Host avatar">
                     <div>
-                        <p class="host-name"><b>Host</b></p>
-                        <p class="grey-text">Thông tin host</p>
+                        <p class="host-name"><b>Host: Nguyễn Mai</b></p>
+                        <p class="grey-text">Trên 3 năm kinh nghiệm cho thuê</p>
                     </div>
                 </div>
                 <hr>
@@ -200,7 +180,8 @@
             </div>
 
             <div class="booking-sidebar">
-                <div class="booking-card">
+                <div class="booking-success-message" id="booking-success-message" role="status" aria-live="polite"></div>
+                <form class="booking-card" id="booking-form">
                     <div class="booking-price-row">
                         <span class="old-price">₫1.325.962</span>
                         <span class="current-price">₫1.213.060</span>
@@ -218,10 +199,10 @@
                     </div>
                     <div class="guest-picker">
                         KHÁCH <br>
-                        <input class="booking-guests-input" id="booking-guests-input" type="number" min="1" step="1" value="1" aria-label="Số khách">
+                        <input class="booking-guests-input" id="booking-guests-input" type="number" min="1" step="1" placeholder="Nhập số khách" aria-label="Số khách">
                     </div>
-                    <button class="btn-primary">Đặt phòng</button>
-                </div>
+                    <button class="btn-primary" type="submit">Đặt phòng</button>
+                </form>
             </div>
 
         </section>

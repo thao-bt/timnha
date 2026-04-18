@@ -1,35 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const bars = document.querySelector('.hamburger-btn');
-  const mobileMenuFixed = document.querySelector('.mobile-menu-fixed');
-  const menu = document.querySelector('.mobile-menu-container');
   const destinationList = document.querySelector('#destination-list');
 
-  const imageBase = 'image/Dữ Liệu Khách Sạn/Vinpearl BeachFront Nha Trang/Ảnh';
+  const getImageUrl = (imageName, place) => {
+    if (!imageName) return 'image/nav-logo.png';
+    return encodeURI(`image/Dữ Liệu Khách Sạn/${place.folder}/Ảnh/${imageName}`);
+  };
 
-  if (bars && mobileMenuFixed && menu) {
-    const closeMenu = () => {
-      mobileMenuFixed.classList.remove('is-open');
-    };
+  // Create card element
+  const createCard = place => {
+    const card = document.createElement('article');
+    card.className = 'destination-card';
+    card.innerHTML = `
+      <a href="detail.html?id=${place.id}" class="destination-card-link">
+        <div class="destination-image-container">
+          <img class="destination-img" src="${getImageUrl(place.image_1, place)}" alt="${place.name}" loading="lazy">
+          <p class="guest-favorite"> Guest favourite</p>
+        </div>
+        <div class="destination-info">
+          <h3 class="destination-name">${place.name}</h3>
+          <p class="destination-description">${place.destination}</p>
+          <p class="destination-price"><strong>${place.price}</strong>/đêm</p>
+        </div>
+      </a>
+    `;
+    return card;
+  };
 
-    bars.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      mobileMenuFixed.classList.toggle('is-open');
-    });
-
-    menu.addEventListener('click', (event) => {
-      const link = event.target.closest('.mobile-menu-link');
-      if (link) {
-        closeMenu();
+  // Fetch and render
+  fetch('place.json')
+    .then(r => r.json())
+    .then(places => {
+      if (destinationList) {
+        destinationList.innerHTML = '';
+        places.forEach(place => destinationList.appendChild(createCard(place)));
       }
-    });
+    })
+    .catch(e => console.error('Error loading places:', e));
 
-    mobileMenuFixed.addEventListener('click', (event) => {
-      if (!menu.contains(event.target)) {
-        closeMenu();
-      }
+  // Handle auth links
+  const authLinks = document.querySelectorAll('[data-auth-link]');
+  const syncAuthLinks = () => {
+    const isLoggedIn = !!localStorage.getItem('currentUser');
+    authLinks.forEach(link => {
+      link.textContent = isLoggedIn ? 'Đăng xuất' : 'Đăng nhập';
+      link.href = isLoggedIn ? '#' : 'sign-up.html';
+      link.onclick = isLoggedIn ? (e) => { e.preventDefault(); localStorage.removeItem('currentUser'); location.reload(); } : null;
     });
-  }
+  };
+  syncAuthLinks();
 
   const mobileFooter = document.querySelector('.mobile-footer-container');
 
@@ -63,176 +81,90 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleMobileFooterVisibility();
   }
 
-  if (!destinationList) {
-    return;
-  }
-
-  const normalizeDestination = (destination) => {
+  const normalizeDestination = destination => {
     const value = String(destination || '').trim();
-
-    if (/^(tp\.?\s*)?hồ chí minh$/i.test(value) || /^hcm$/i.test(value)) {
-      return 'TP. Hồ Chí Minh';
-    }
-
-    if (/^(tp\.?\s*)?hà nội$/i.test(value) || /^hn$/i.test(value)) {
-      return 'Hà Nội';
-    }
-
+    if (/^(tp\.?\s*)?hồ chí minh$/i.test(value) || /^hcm$/i.test(value)) return 'TP. Hồ Chí Minh';
+    if (/^(tp\.?\s*)?hà nội$/i.test(value) || /^hn$/i.test(value)) return 'Hà Nội';
     return value;
   };
 
-  const formatPrice = (price) => String(price || '').trim();
-
-  const getImageUrl = (imageName) => {
-    const fileName = String(imageName || '').trim();
-
-    if (!fileName) {
-      return 'image/nav-logo.png';
-    }
-
-    return encodeURI(`${imageBase}/${fileName}.png`);
+  // Group places by destination
+  const groupByDestination = places => {
+    const grouped = new Map();
+    places.forEach(p => {
+      const dest = normalizeDestination(p.destination);
+      if (!grouped.has(dest)) grouped.set(dest, []);
+      grouped.get(dest).push(p);
+    });
+    return grouped;
   };
 
-  const createCard = (place) => {
-    const card = document.createElement('article');
-    card.className = 'destination-card';
-
-    const cardLink = document.createElement('a');
-    cardLink.className = 'destination-card-link';
-    cardLink.href = `detail.html?id=${encodeURIComponent(place.id)}`;
-    cardLink.setAttribute('aria-label', `Xem chi tiết ${place.name || 'địa điểm'}`);
-
-    const imageContainer = document.createElement('div');
-    imageContainer.className = 'destination-image-container';
-
-    const image = document.createElement('img');
-    image.className = 'destination-img';
-    image.src = getImageUrl(place.image);
-    image.alt = place.name || 'Place image';
-    image.loading = 'lazy';
-    image.decoding = 'async';
-    image.addEventListener('error', () => {
-      image.src = 'image/nav-logo.png';
-    });
-
-    const favoriteTag = document.createElement('p');
-    favoriteTag.className = 'guest-favorite';
-    favoriteTag.textContent = 'Được khách yêu thích';
-
-    const favoriteIcon = document.createElement('i');
-    favoriteIcon.className = 'fa-regular fa-heart fa-lg';
-    favoriteIcon.style.color = 'rgb(9, 9, 9)';
-
-    imageContainer.append(image, favoriteTag, favoriteIcon);
-
-    const textContainer = document.createElement('div');
-    textContainer.className = 'destination-text-container';
-
-    const title = document.createElement('h4');
-    title.className = 'destination-text-header';
-    title.textContent = place.name || 'Unknown place';
-
-    const price = document.createElement('p');
-    price.className = 'destination-card-meta destination-price';
-    price.textContent = `${formatPrice(place.price)} cho 2 đêm`;
-
-    textContainer.append(title, price);
-    cardLink.append(imageContainer, textContainer);
-    card.append(cardLink);
-
-    return card;
-  };
-
-  const createGroup = (destination, places) => {
-    const group = document.createElement('div');
-    group.className = 'destination-row';
-
-    const headingRow = document.createElement('div');
-    headingRow.className = 'destination-heading-row';
-
-    const heading = document.createElement('h2');
-    heading.className = 'destination-heading';
-    heading.textContent = `Nơi lưu trú được ưa chuộng tại ${destination}`;
-
-    const headingLink = document.createElement('span');
-    headingLink.className = 'destination-heading-link';
-
-    const headingIcon = document.createElement('i');
-    headingIcon.className = 'fa-solid fa-chevron-right fa-xs';
-    headingIcon.style.color = 'rgb(9, 9, 9)';
-
-    headingLink.appendChild(headingIcon);
-    headingRow.append(heading, headingLink);
-
-    const grid = document.createElement('div');
-    grid.className = 'destination-grid-container';
-
-    const cards = [];
-
-    places.forEach((place) => {
-      const card = createCard(place);
-      cards.push(card);
-      grid.appendChild(card);
-    });
-
-    const loopCardCount = Math.min(6, cards.length);
-
-    for (let index = 0; index < loopCardCount; index += 1) {
-      const clonedCard = cards[index].cloneNode(true);
-      clonedCard.classList.add('destination-card-clone');
-      clonedCard.setAttribute('aria-hidden', 'true');
-      grid.appendChild(clonedCard);
-    }
-
-    group.append(headingRow, grid);
-    return group;
-  };
-
-  const renderPlaces = (places) => {
-    const groupedPlaces = new Map();
-
-    places.forEach((place) => {
-      const destination = normalizeDestination(place.destination);
-
-      if (!groupedPlaces.has(destination)) {
-        groupedPlaces.set(destination, []);
-      }
-
-      groupedPlaces.get(destination).push(place);
-    });
-
+  // Render the grouped layout
+  const renderPlaces = places => {
+    if (!destinationList) return;
     destinationList.innerHTML = '';
-
-    groupedPlaces.forEach((groupPlaces, destination) => {
-      destinationList.appendChild(createGroup(destination, groupPlaces));
+    
+    groupByDestination(places).forEach((groupPlaces, destination) => {
+      const section = document.createElement('div');
+      section.className = 'destination-row';
+      
+      // Heading
+      const headingRow = document.createElement('div');
+      headingRow.className = 'destination-heading-row';
+      headingRow.innerHTML = `
+        <h2 class="destination-heading">Nơi lưu trú được ưa chuộng tại ${destination}</h2>
+        <span class="destination-heading-link"><i class="fa-solid fa-chevron-right fa-xs"></i></span>
+      `;
+      
+      // Grid
+      const grid = document.createElement('div');
+      grid.className = 'destination-grid-container';
+      
+      // First pass - add actual cards
+      const cards = groupPlaces.map(p => {
+        const card = document.createElement('article');
+        card.className = 'destination-card';
+        card.innerHTML = `
+          <a href="detail.html?id=${p.id}" class="destination-card-link">
+            <div class="destination-image-container">
+              <img class="destination-img" src="${getImageUrl(p.image_1, p)}" alt="${p.name}" loading="lazy">
+              <p class="guest-favorite"> Được khách yêu thích</p>
+            </div>
+            <div class="destination-text-container">
+              <h4 class="destination-text-header">${p.name}</h4>
+              <p class="destination-card-meta destination-price">${p.price} cho 2 đêm</p>
+            </div>
+          </a>
+        `;
+        grid.appendChild(card);
+        return card;
+      });
+      
+      // Second pass - add cloned cards for carousel effect
+      cards.slice(0, 6).forEach(card => {
+        const cloned = card.cloneNode(true);
+        cloned.classList.add('destination-card-clone');
+        cloned.setAttribute('aria-hidden', 'true');
+        grid.appendChild(cloned);
+      });
+      
+      section.append(headingRow, grid);
+      destinationList.appendChild(section);
     });
   };
 
-  const renderError = (message) => {
-    destinationList.innerHTML = '';
-
-    const errorState = document.createElement('p');
-    errorState.textContent = message;
-    destinationList.appendChild(errorState);
-  };
-
+  // Fetch and render
   fetch('place.json')
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Failed to load place.json (${response.status})`);
-      }
-
-      return response.json();
+    .then(r => {
+      if (!r.ok) throw new Error(`Failed to load (${r.status})`);
+      return r.json();
     })
-    .then((places) => {
-      if (!Array.isArray(places)) {
-        throw new Error('place.json must contain an array of places.');
-      }
-
+    .then(places => {
+      if (!Array.isArray(places)) throw new Error('Invalid data');
       renderPlaces(places);
     })
-    .catch((error) => {
-      console.error(error);
-      renderError('Không thể tải dữ liệu địa điểm từ place.json.');
+    .catch(e => {
+      console.error(e);
+      if (destinationList) destinationList.innerHTML = '<p>Không thể tải dữ liệu.</p>';
     });
 });

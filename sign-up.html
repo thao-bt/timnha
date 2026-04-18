@@ -36,22 +36,6 @@
 
                 <button type="submit" class="btn-primary" id="submit-btn">Tiếp tục</button>
             </form>
-
-            <div class="divider">
-                <span>HOẶC</span>
-            </div>
-
-            <div class="social-buttons">
-                <button class="btn-outline">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" width="18">
-                    Tiếp tục với Google
-                </button>
-                <button class="btn-outline">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="18">
-                    Tiếp tục với Facebook
-                </button>
-            </div>
-
             <div class="auth-footer">
                 <span id="footer-text">Bạn chưa có tài khoản?</span>
                 <a href="javascript:void(0)" id="toggle-link" onclick="toggleAuth()">Đăng ký ngay</a>
@@ -130,6 +114,13 @@
                 window.location.href = 'homepage.html';
             }
         });
+
+        const closeBtn = document.querySelector('.close-btn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function () {
+                window.location.href = 'homepage.html';
+            });
+        }
     </script>
 
 </body>

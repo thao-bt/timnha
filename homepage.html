@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="image/mobile-nav-logo.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="image/favicon-96x96.png" sizes="96x96" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
                 <div class="search-icon-container1">
                     <i class="fa-solid fa-magnifying-glass fa-sm"></i>
                 </div>
-                <p class="mobile-search-p">Start searching</p>
+                <input class="header-search-subtext header-search-input" type="text" placeholder="Tìm điểm đến" aria-label="Tìm điểm đến">
             </div>
         </div>
 
@@ -31,13 +31,13 @@
         <div class="container">
             <nav class="main-nav">
                 <div class="logo">
-                    <img class="nav-logo" src="image/nav-logo.png"> 
-                    <img class="mobile-nav-logo" src="image/mobile-nav-logo.png">
+                    <a href="homepage.html"><img class="nav-logo" src="image/nav-logo.png"></a>  
+                    <a href="homepage.html"><img class="mobile-nav-logo" src="image/mobile-nav-logo.png"></a> 
                 </div>
                 <div class="header-search-bar" role="search" aria-label="Search destinations">
                     <div class="header-search-item">
                         <p class="header-search-label">Địa điểm</p>
-                        <p class="header-search-subtext">Tìm điểm đến</p>
+                        <input class="header-search-subtext header-search-input" type="text" placeholder="Tìm điểm đến" aria-label="Tìm điểm đến">
                     </div>
                     <div class="header-search-divider"></div>
                     <div class="header-search-item">
@@ -47,7 +47,7 @@
                     <div class="header-search-divider"></div>
                     <div class="header-search-item">
                         <p class="header-search-label">Khách</p>
-                        <p class="header-search-subtext">Thêm khách</p>
+                        <input class="header-search-subtext header-search-input" type="number" min="1" step="1" placeholder="Thêm khách" aria-label="Thêm khách">
                     </div>
                     <button class="header-search-button" type="button" aria-label="Search">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -55,8 +55,8 @@
                 </div>
                 <ul class="nav-menu-links">
                     <li class="nav-icon-container hamburger-btn">
-                        <a href="" class="nav-link">
-                            <i style="color: black" class="fa-solid fa-bars"></i>
+                        <a href="sign-up.html" class="nav-link" data-auth-link>
+                            Đăng nhập
                         </a>
                     </li>
                 </ul>
@@ -64,26 +64,6 @@
             </nav>
         </div>
     </header>
-
-    <!--Mobile Menu fixed-->
-    <div class="container">
-        <div class="mobile-menu-fixed">
-            <div class="mobile-menu-container">
-                <ul class="mobile-menu">
-                    <li class="mobile-menu-li menu-flexbox">
-                        <a class="mobile-menu-link">
-                            <i class="fa-solid fa-question fa-xs"></i>
-                        </a>
-                        <a href="" class="mobile-menu-link">Trung tâm trợ giúp</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li class="mobile-menu-li">
-                        <a href="" class="mobile-menu-link">Đăng nhập hoặc đăng kí</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <!-- Mobile Bottom Menu start-->
     
@@ -96,10 +76,10 @@
                     <a href="" class="footer-menu-link">Khám phá</a>
                 </li>
                 <li class="mobile-li">
-                    <a href="" class="footer-icon">
+                    <a href="sign-up.html" class="footer-icon">
                         <i class="fa-solid fa-user fa-lg" style="color: rgb(252, 158, 116);"></i>
                     </a>
-                    <a href="" class="footer-menu-link">Đăng Nhập</a>
+                    <a href="sign-up.html" class="footer-menu-link" data-auth-link>Đăng nhập</a>
                 </li>
             </ul>
         </div>
