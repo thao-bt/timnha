@@ -2,9 +2,9 @@ Tìm Nhà - Website Tìm Kiếm Phòng Trọ
 Dự án này là một website hỗ trợ người dùng tìm kiếm phòng trọ và xem chi tiết các địa điểm thuê nhà, được tối ưu hóa giao diện cho cả máy tính và điện thoại.
 
 Tính năng chính
-Trang chủ (Homepage): Tìm kiếm và lọc danh sách các phòng trọ/nhà cho thuê.
+Trang chủ (Homepage.html): Tìm kiếm và lọc danh sách các phòng trọ/nhà cho thuê.
 
-Chi tiết (Detail): Xem thông tin chi tiết, hình ảnh và giá cả của từng phòng.
+Chi tiết (Detail.html): Xem thông tin chi tiết, hình ảnh và giá cả của từng phòng.
 
 Đăng ký/Đăng nhập: Quản lý tài khoản người dùng.
 
