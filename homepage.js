@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const destinationList = document.querySelector('#destination-list');
+  let allPlaces = [];
 
   const getImageUrl = (imageName, place) => {
     if (!imageName) return 'image/nav-logo.png';
@@ -26,17 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return card;
   };
 
-  // Fetch and render
-  fetch('place.json')
-    .then(r => r.json())
-    .then(places => {
-      if (destinationList) {
-        destinationList.innerHTML = '';
-        places.forEach(place => destinationList.appendChild(createCard(place)));
-      }
-    })
-    .catch(e => console.error('Error loading places:', e));
-
   // Handle auth links
   const authLinks = document.querySelectorAll('[data-auth-link]');
   const syncAuthLinks = () => {
@@ -48,38 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
   syncAuthLinks();
-
-  const mobileFooter = document.querySelector('.mobile-footer-container');
-
-  if (mobileFooter) {
-    let lastScrollY = window.scrollY;
-    const scrollDeltaThreshold = 4;
-
-    const toggleMobileFooterVisibility = () => {
-      if (window.innerWidth > 917) {
-        mobileFooter.classList.remove('is-visible');
-        lastScrollY = window.scrollY;
-        return;
-      }
-
-      const currentScrollY = window.scrollY;
-      const isAtTop = currentScrollY <= 8;
-      const isScrollingDown = currentScrollY > lastScrollY + scrollDeltaThreshold;
-      const isScrollingUp = currentScrollY < lastScrollY - scrollDeltaThreshold;
-
-      if (isAtTop || isScrollingUp) {
-        mobileFooter.classList.remove('is-visible');
-      } else if (isScrollingDown) {
-        mobileFooter.classList.add('is-visible');
-      }
-
-      lastScrollY = currentScrollY;
-    };
-
-    window.addEventListener('scroll', toggleMobileFooterVisibility, { passive: true });
-    window.addEventListener('resize', toggleMobileFooterVisibility);
-    toggleMobileFooterVisibility();
-  }
 
   const normalizeDestination = destination => {
     const value = String(destination || '').trim();
@@ -99,12 +57,49 @@ document.addEventListener('DOMContentLoaded', () => {
     return grouped;
   };
 
+  // Filter places based on search criteria
+  const filterPlaces = (places, searchName, maxPrice, maxGuests) => {
+    return places.filter(place => {
+      // Filter by name/destination
+      if (searchName) {
+        const name = String(place.name || '').toLowerCase();
+        const dest = String(place.destination || '').toLowerCase();
+        const search = String(searchName || '').toLowerCase();
+        if (!name.includes(search) && !dest.includes(search)) return false;
+      }
+
+      // Filter by price (max price)
+      if (maxPrice) {
+        const placePrice = Number(String(place.price || '').replace(/[^\d]/g, ''));
+        const userMaxPrice = Number(String(maxPrice).replace(/[^\d]/g, ''));
+        if (Number.isFinite(placePrice) && Number.isFinite(userMaxPrice) && placePrice > userMaxPrice) return false;
+      }
+
+      // Filter by guests (bed * 2)
+      if (maxGuests) {
+        const bedStr = String(place.bed || '').trim();
+        const bedCount = Number(bedStr.match(/\d+/)?.[0] || 1);
+        const maxGuestsFromBeds = bedCount * 2;
+        const userGuests = Number(maxGuests);
+        if (Number.isFinite(userGuests) && maxGuestsFromBeds < userGuests) return false;
+      }
+
+      return true;
+    });
+  };
+
   // Render the grouped layout
   const renderPlaces = places => {
     if (!destinationList) return;
     destinationList.innerHTML = '';
     
-    groupByDestination(places).forEach((groupPlaces, destination) => {
+    const grouped = groupByDestination(places);
+    if (grouped.size === 0) {
+      destinationList.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 40px; color: #999;">Không tìm thấy kết quả phù hợp</p>';
+      return;
+    }
+
+    grouped.forEach((groupPlaces, destination) => {
       const section = document.createElement('div');
       section.className = 'destination-row';
       
@@ -153,6 +148,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  // Search and filter functionality
+  const searchButton = document.querySelector('.header-search-button');
+  const performSearch = () => {
+    const headerSearchBar = document.querySelector('.header-search-bar');
+    const inputs = headerSearchBar?.querySelectorAll('input');
+    
+    const searchName = inputs?.[0]?.value || '';
+    const maxPrice = inputs?.[1]?.value || '';
+    const maxGuests = inputs?.[2]?.value || '';
+
+    const filtered = filterPlaces(allPlaces, searchName, maxPrice, maxGuests);
+    renderPlaces(filtered);
+  };
+
+  if (searchButton) {
+    searchButton.addEventListener('click', performSearch);
+  }
+
+  // Mobile search connector - sync to desktop and search
+  const mobileSearchInput = document.querySelector('.mobile-sticky-menu-search .header-search-input');
+  if (mobileSearchInput) {
+    mobileSearchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const desktopInput = document.querySelector('.header-search-bar .header-search-input');
+        if (desktopInput) desktopInput.value = mobileSearchInput.value;
+        performSearch();
+      }
+    });
+  }
+
   // Fetch and render
   fetch('place.json')
     .then(r => {
@@ -161,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(places => {
       if (!Array.isArray(places)) throw new Error('Invalid data');
+      allPlaces = places;
       renderPlaces(places);
     })
     .catch(e => {

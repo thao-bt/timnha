@@ -12,7 +12,9 @@ Global style
 
 body {
     font-family: "Montserrat", sans-serif;
-    height: 2000px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -398,6 +400,10 @@ mobile footer
   letter-spacing: 0.01em;
 }
 
+/* Main content grows to push footer down */
+main {
+  flex: 1;
+}
 
 /* 
 
